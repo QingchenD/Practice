@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:title="字体大小" android:icon="@mipmap/ic_launcher" >
+        <menu>
+            <!--属性checkableBehavior定义菜单行为 single 单选，all多选，none 不可选-->
+            <group
+                android:id="@+id/group_fount"
+                android:checkableBehavior="none">
+                <item android:id="@+id/fount_10" android:title="10号" />
+                <item android:id="@+id/fount_12" android:title="12号" />
+                <item android:id="@+id/fount_14" android:title="14号" />
+                <item android:id="@+id/fount_16" android:title="16号" />
+                <item android:id="@+id/fount_18" android:title="18号" />
+            </group>
+        </menu>
+    </item>
+</menu>

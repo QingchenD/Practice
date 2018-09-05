@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="home_header_service_area_top_margin" type="dimen" format="float">0.5</item>
+</resources>

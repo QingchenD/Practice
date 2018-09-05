@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/edit_ssid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SSID"/>
+
+    <EditText
+        android:id="@+id/edit_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="key"/>
+
+    <Button
+        android:id="@+id/open_hotspot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Hot Spot"/>
+
+
+    <Button
+        android:id="@+id/get_mac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Wifi MAC"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_get_wificonfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get WiFiConfig"/>
+
+        <TextView
+            android:id="@+id/tv_wifi_config"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Wifi SSID"/>
+
+        <EditText
+            android:id="@+id/et_wifi_ssid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="miife_001F34"/>
+            <!--android:text="1648"/>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Key"/>
+
+        <EditText
+            android:id="@+id/et_wifi_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="12345678"/>
+            <!--android:text="x12345678Y"/>-->
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_connect_wifi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Connet this wifi"/>
+
+
+</LinearLayout>

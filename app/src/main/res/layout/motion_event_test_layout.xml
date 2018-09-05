@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/motion_tst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <com.mycompany.mymaintestactivity.MyView
+            android:id="@+id/myview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/input_phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"/>
+
+        <Button
+            android:id="@+id/change_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onChange"
+            android:layout_weight="1"
+            android:text="Change"/>
+
+
+        <TextView
+            android:id="@+id/change_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:hint="123"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/input_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/pwd_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onPwdCheck"
+            android:text="PWD Check"/>
+
+        <TextView
+            android:id="@+id/pwd_check_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

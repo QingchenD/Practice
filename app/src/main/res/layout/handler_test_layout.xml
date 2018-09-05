@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_thread_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Thread"/>
+
+    <Button
+        android:id="@+id/btn_thread_start_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Thread 2"/>
+
+
+    <Button
+        android:id="@+id/btn_remove_callback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove CallBack"/>
+
+    <Button
+    android:id="@+id/btn_remove_callback_2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Remove CallBack 2"/>
+
+</LinearLayout>

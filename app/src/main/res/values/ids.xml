@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- Messages IDs -->
+    <item type="id" name="auto_focus" />
+    <item type="id" name="decode" />
+    <item type="id" name="decode_failed" />
+    <item type="id" name="decode_succeeded" />
+    <item type="id" name="launch_product_query" />
+    <item type="id" name="quit" />
+    <item type="id" name="restart_preview" />
+    <item type="id" name="return_scan_result" />
+    <item type="id" name="search_book_contents_failed" />
+    <item type="id" name="search_book_contents_succeeded" />
+    <item type="id" name="action_bar_right" />
+    <item type="id" name="action_bar_next" />
+    <item type="id" name="action_bar_siren" />
+    <item type="id" name="action_bar_share" />
+    <item type="id" name="action_bar_add" />
+    <item type="id" name="action_bar_edit" />
+    <item type="id" name="action_bar_search" />
+    <item type="id" name="action_bar_check" />
+    <item type="id" name="action_bar_more" />
+    <item type="id" name="action_bar_refresh" />
+    <item type="id" name="action_bar_switch_camera" />
+    <item type="id" name="action_bar_video_share" />
+
+    <item type="id" name="ipcam_id" />
+    <item type="id" name="media_ack_error" />
+    <item type="id" name="fix_width" />
+    <item type="id" name="fix_height" />
+    <item type="id" name="src_width" />
+    <item type="id" name="src_height" />
+
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_start_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:onClick="startActivity"
+        android:text="Start Activity"/>
+
+    <Button
+        android:id="@+id/btn_implicit_start_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:onClick="implicitStartActivity"
+        android:text="Inplicit Start Activity"/>
+
+    <Button
+        android:id="@+id/btn_start_ohter_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:onClick="implicitStartOhterActivity"
+        android:text="Inplicit Start other Activity"/>
+
+    <Button
+        android:id="@+id/btn_dial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:onClick="implicitStartDialActivity"
+        android:text="Inplicit Start Dial Activity"/>
+
+    <Button
+        android:id="@+id/finishBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:onClick="OnFinish"
+        android:text="Fiinish"/>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:layout_gravity="center"/>
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="setProgressBar"
+        android:text="Set progress bar"/>
+
+</LinearLayout>

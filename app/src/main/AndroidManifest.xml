@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mycompany.mymaintestactivity" >
+
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/DefaultTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".StartOneActitity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.ryg.task1"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name">
+            <!--android:process=":nihao">-->
+            <intent-filter>
+                <action android:name="com.mycompany.mymaintestactivity.ACTION_START" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MY_CATEGORY" />
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".StartOneActivityForResult"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
+
+        <!--android:taskAffinity="com.ryg.task2"-->
+        <!--android:process="com.mycompany.mymaintestactivity.nihao"-->
+        <activity
+            android:name=".SecondActivity"
+            android:launchMode="singleTask"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".SingeltonTestActivity"
+            android:label="@string/app_name" >
+        </activity>
+
+        <activity android:name=".ThreadSyncActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".PopWindowTestActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".PlayAudioActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".PlayVideoActivity"
+            android:label="@string/app_name">
+
+        </activity>
+
+        <activity
+            android:name=".OpenFileActivity"
+            android:label="@string/app_name">
+
+        </activity>
+
+        <activity android:name=".VirbrateActivity"
+            android:label="@string/app_name">
+
+        </activity>
+
+        <activity android:name=".ServiceDemoActivity"
+            android:label="@string/app_name" >
+
+        </activity>
+
+        <activity android:name=".UseBriderActivity"
+            android:label="@string/app_name" >
+
+        </activity>
+
+        <activity android:name=".TextureViewActivity"
+            android:label="@string/app_name"
+            android:hardwareAccelerated="true">
+
+        </activity>
+
+        <activity android:name=".ShowImgActivity"
+            android:label="@string/app_name"
+            android:hardwareAccelerated="true"/>
+
+        <activity android:name=".ScanFileActivity"
+            android:label="@string/app_name">
+
+        </activity>
+
+        <activity android:name=".DateFormatActivity"
+            android:label="@string/app_name"/>
+
+        <activity android:name=".XYSeriesRendererActivity"
+            android:label="@string/app_name"/>
+
+        <service android:name=".CountService"/>
+
+        <activity
+            android:name=".MessageActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="com.mycompany.fragment.FragmentTestActivity"
+            android:label="@string/app_name"  />
+
+        <activity android:name="com.mycompany.fragment.FragmentPracticeActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".NewsContentActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".NetworkChangeReceiverActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".SendBroadcastActivity"
+            android:label="@string/app_name"/>
+
+        <activity android:name="com.mycompany.broadcastbestpractice.LoginActiviy"
+            android:label="@string/app_name"/>
+
+        <activity android:name="com.mycompany.broadcastbestpractice.BroadcastPracticeMain"
+                android:label="@string/app_name" />
+
+        <activity android:name=".SaveDataActivity"
+            android:label="@string/app_name"/>
+
+        <activity android:name=".Ym2IPTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".SharedPreferencesActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".SQLiteDatabaseActivity"
+            android:label="@string/app_name"/>
+
+        <activity android:name=".ReadContactsActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".NotificationActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".SMSTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".ChoosePicTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".BlueToothTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".MyServiceActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".ServiceBestPracticeActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".WebViewTestActivity"
+            android:label="@string/app_name"  />
+
+        <activity android:name=".HttpConnectionActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".LocationTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".LightSensorTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".AccelerometerSensorTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".CompassTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".FilterFileActivity"
+            android:label="@string/app_name" />
+        
+        <activity android:name=".LandscapePortraitActivity" />
+
+        <activity android:name=".HandlerTestActivity"
+            android:label="@string/app_name"/>
+
+        <activity android:name=".JSONTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".UsbTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".SetImageManualActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".ConnectUsbActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".SeekBarTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".WiFiHotSpotActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".MotionEventTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".UnderLineTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".QRCodeTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name="com.google.zxing.client.android.CaptureActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".PhoneInfoActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".DialogTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name="com.mycompany.net.NetClientActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name="com.mycompany.net.NetServerActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".GetMacActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".PermissionActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".MoveViewActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".AnimatorActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".KotlinTest"
+            android:label="@string/app_name"/>
+
+        <activity android:name=".AudioRecordActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name="com.mycompany.launchmodeTest.LaunchModeTestActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name="com.mycompany.launchmodeTest.StandardActivity"
+            android:label="@string/app_name"
+            android:launchMode="standard" />
+
+        <activity android:name="com.mycompany.launchmodeTest.SingleTopActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.singletop" />
+
+        <activity android:name="com.mycompany.launchmodeTest.SingleTaskActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.tencent.mm" />
+
+        <activity android:name="com.mycompany.launchmodeTest.SingleInstanceActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.singleinstance" />
+
+        <activity android:name="com.mycompany.launchmodeTest.ApplicationStartActivity"
+            android:label="@string/app_name"
+            android:taskAffinity="com.application"/>
+
+        <activity android:name=".ScrollContainListActivity"
+            android:label="@string/app_name"/>
+        
+        <activity android:name="com.mycompany.aidlTest.AidlTestActivity" />
+
+        <activity android:name="com.mycompany.aidlTest.AidlTestActivitySecond"/>
+
+        <activity android:name=".AsyncTaskTestActivity" />
+        
+        <activity android:name="com.mycompany.net.OkHttpTestActivity" />
+
+        <activity android:name="com.ViewTouchEvent.ViewTouchEventTestActivity"/>
+
+        <activity android:name="com.mycompany.Messenger.MessengerTestActivity"/>
+
+        <activity android:name="com.mycompany.BinderTest.BinderTestActivity"/>
+
+        <activity android:name="com.mycompany.menu.PopUpMenuTestActivity" />
+
+        <activity android:name="com.mycompany.annotation.ButterknifeTestActivity" />
+
+        <activity android:name="com.mycompany.surface.SurfaceViewTestActivty" />
+
+        <activity android:name="com.mycompany.recycleview.RecycleViewTest"/>
+
+        <receiver android:name=".BootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".MyBroadcastReceiver">
+            <intent-filter android:priority="100">
+                <action android:name="com.mycompany.broadcasttest.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.mycompany.broadcastbestpractice.ForceOfflineReceiver">
+            <intent-filter>
+                <action android:name="com.mycompany.broadcastbestpractice.FORCE_OFFLINE"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".AlarmReceiver"/>
+
+        <receiver android:name="com.mycompany.receiver.MyReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".MyService" />
+        <service android:name=".MyIntentService" />
+        <service android:name=".LongRunningService"/>
+        <service
+            android:name="com.mycompany.aidlTest.MyAidlService"
+            android:enabled="true"
+            android:exported="true"/>
+            <!--android:process=":aidl"-->
+
+        <service android:name="com.mycompany.Messenger.MessengerTestService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":messenger"/>
+
+        <service android:name="com.mycompany.BinderTest.BinderService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":binder"/>
+
+        <provider
+            android:name="com.mycompany.mymaintestactivity.DatabaseProvider"
+            android:authorities="com.example.databasetest.provider"
+            android:exported="true" >
+
+        </provider>
+
+    </application>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="ANDROID.PERMISSION.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+
+</manifest>

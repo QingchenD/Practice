@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="hi"/>
+
+    <Button
+        android:id="@+id/start_async_task_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start AsyncTask 1"/>
+
+
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="2"/>
+
+    <Button
+        android:id="@+id/start_async_task_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start AsyncTask 2"/>
+
+
+    <Button
+        android:id="@+id/btn_show_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Show a Dialog"/>
+
+    <Button
+        android:id="@+id/btn_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="share something"/>
+
+</LinearLayout>

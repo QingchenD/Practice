@@ -1,0 +1,496 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 StartActivity"/>
+
+            <Button
+                android:id="@+id/btn_seccond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 SecondActivity"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:id="@+id/btn2"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="StartActivityForResult"/>
+
+                <TextView
+                    android:id="@+id/text_btn2_result"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:textSize="18dp"
+                    android:hint="result..."/>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_singleton_tst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3 Singleton"/>
+
+            <Button
+                android:id="@+id/btn_sync_tst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4 Thread Sync Test"/>
+
+
+            <Button
+                android:id="@+id/btn_popWindow_tst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5 POP Window"/>
+
+
+            <Button
+                android:id="@+id/btn_XYSeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6 XYMultipleSeriesRenderer"/>
+
+            <Button
+                android:id="@+id/btn_playAudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7 Play Audio"/>
+
+            <Button
+                android:id="@+id/btn_playVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Play Video"/>
+
+            <Button
+                android:id="@+id/btn_open_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8 Open File"/>
+
+            <Button
+                android:id="@+id/btn_vibrate_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9 Vibrate"/>
+
+            <Button
+                android:id="@+id/btn_service_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10 Service Test"/>
+
+
+            <Button
+                android:id="@+id/btn_textureview_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="11 TextureView Test"/>
+
+            <Button
+                android:id="@+id/btn_show_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12 Show Img"/>
+
+
+            <Button
+                android:id="@+id/btn_scan_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="13 Scan File"/>
+
+
+            <Button
+                android:id="@+id/btn_date_format"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="14 Date Format Test"/>
+
+            <Button
+                android:id="@+id/btn_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="15 Message"/>
+
+
+            <Button
+                android:id="@+id/btn_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="16 Static Fragment"/>\
+
+            <Button
+                android:id="@+id/btn_fragment_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="17 Fragment  Practice"/>
+
+            <Button
+                android:id="@+id/btn_network_change"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="18 Network change Receiver"/>
+
+            <Button
+                android:id="@+id/btn_send_broadcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="19 Send Broadcast Test"/>
+
+            <Button
+                android:id="@+id/btn_broadcast_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="20 Broadcast best practice"/>
+
+            <Button
+                android:id="@+id/btn_save_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="21 Save Data to File"/>
+
+            <Button
+                android:id="@+id/btn_ym2ip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="22 DNS Test"/>
+
+            <Button
+                android:id="@+id/btn_shared_preference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="23 SharedPreference"/>
+
+            <Button
+                android:id="@+id/btn_sql_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="24 SQLiteDataBase Practice"/>
+
+            <Button
+                android:id="@+id/btn_read_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="25 Read Contacts"/>
+
+            <Button
+                android:id="@+id/btn_notification_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="26 Notification Test"/>
+
+            <Button
+                android:id="@+id/btn_sms_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="27 SMS TEST"/>
+
+            <Button
+                android:id="@+id/btn_choose_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="28 Choose Picture Test"/>
+
+            <Button
+                android:id="@+id/btn_blue_tooth_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="29 Blue Tooth Test"/>
+
+            <Button
+                android:id="@+id/btn_my_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="30 MyService"/>
+
+            <Button
+                android:id="@+id/btn_service_best_practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="31 Service Best Practice"/>
+
+            <Button
+                android:id="@+id/btn_webView_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="32 WebView Test"/>
+
+            <Button
+                android:id="@+id/btn_http_connection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="33 Http Connection"/>
+
+            <Button
+                android:id="@+id/btn_location_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="34 Location Test"/>
+
+            <Button
+                android:id="@+id/btn_light_sensor_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="35 Light Sensor Test"/>
+
+            <Button
+                android:id="@+id/btn_accelerometer_sensor_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="36 Accelerometer Sensor Test"/>
+
+            <Button
+                android:id="@+id/btn_compass_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="37 Compass Test"/>
+
+            <Button
+                android:id="@+id/btn_filter_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="38 Filter Test"/>
+
+            <Button
+                android:id="@+id/btn_landscape_portrait"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="39 Landscape portrait Test"/>
+
+            <Button
+                android:id="@+id/btn_handler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="40 Handler Test"/>
+
+
+            <Button
+                android:id="@+id/btn_json"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="41 JSON Test"/>
+
+            <Button
+                android:id="@+id/btn_usb_tst"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="42 USB Test"/>
+
+            <Button
+                android:id="@+id/btn_Image_test"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="43 Set Image Size By Manual"/>
+
+            <Button
+                android:id="@+id/btn_connect_usb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="44 Usb Connect Test"/>
+
+
+            <Button
+                android:id="@+id/btn_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="45 My Seek Bar Test"/>
+
+            <Button
+                android:id="@+id/btn_wifi_hotspot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="46 Set WiFi Hot Spot"/>
+
+            <Button
+                android:id="@+id/btn_motion_event"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="47 Motion Event Test"/>
+
+            <Button
+                android:id="@+id/btn_under_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="48 Under Line Test"/>
+
+            <Button
+                android:id="@+id/btn_qr_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="49 QRCode Test"/>
+
+            <Button
+                android:id="@+id/btn_phone_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50 Get Phone Information"/>
+
+            <Button
+                android:id="@+id/btn_dialog_tst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="51 Diaglog Test"/>
+
+
+            <Button
+                android:id="@+id/btn_net_client"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="52 Netty Client"/>
+
+            <Button
+                android:id="@+id/btn_net_server"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="53 Netty Server"/>
+
+            <Button
+                android:id="@+id/btn_get_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="54 Get MAC"/>
+
+            <Button
+                android:id="@+id/btn_get_permission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="55 Android 6.0 permission"/>
+
+            <Button
+                android:id="@+id/btn_move_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="56 Move view"/>
+
+            <Button
+                android:id="@+id/btn_animator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "57 Animator Test"/>
+
+            <Button
+                android:id="@+id/btn_kotlin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "58 Kotlin Test"/>
+
+            <Button
+                android:id="@+id/btn_record_audio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="59 Audio Record"/>
+
+
+            <Button
+                android:id="@+id/btn_lanchmode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="60 Launch mode Test"/>
+
+            <Button
+                android:id="@+id/btn_scroll_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="61 Scroll contain list"/>
+
+
+            <Button
+                android:id="@+id/btn_aidl_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="62 Aidl Test"/>
+
+            <Button
+                android:id="@+id/btn_async_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="63 AsyncTask Test"/>
+
+            <Button
+                android:id="@+id/btn_okhttp_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="64 OkHttp Test"/>
+
+            <Button
+                android:id="@+id/btn_event_touch_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="65 View Event Touch Test"/>
+
+            <Button
+                android:id="@+id/btn_messenger_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="66 Messenger Test"/>
+
+            <Button
+                android:id="@+id/btn_binder_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="67 Binder service Test"/>
+
+            <Button
+                android:id="@+id/btn_popup_menu_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="68 Popup menu Test"/>
+
+            <Button
+                android:id="@+id/btn_annotation_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="69 Annotation Test"/>
+
+            <Button
+                android:id="@+id/btn_surface_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="70 SurfaceView Test"/>
+
+            <Button
+                android:id="@+id/btn_recycle_view_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="71 Recycle View Test"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
