@@ -318,6 +318,8 @@
 
         <activity android:name="com.mycompany.recycleview.RecycleViewTest"/>
 
+        <activity android:name="com.mycompany.eventbus.EventBusTestActivity" />
+
         <receiver android:name=".BootCompleteReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

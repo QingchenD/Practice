@@ -8,10 +8,18 @@ import android.os.Bundle;
 import android.os.Debug;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.util.EventLog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.mycompany.eventbus.EventBusTestActivity;
+import com.mycompany.eventbus.MessageEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
@@ -34,7 +42,7 @@ public class StartOneActitity extends Activity {
 
         setContentView(R.layout.start_one_activity_layout);
         System.out.println("[Mydebug] " + getClass().getSimpleName() + " taskID:" + getTaskId());
-        Button start = (Button) findViewById(R.id.btn_start_second);
+        final Button start = (Button) findViewById(R.id.btn_start_second);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +75,17 @@ public class StartOneActitity extends Activity {
             }
         });
 
+        Button btnEventbus = (Button) findViewById(R.id.btn_start_event_bus);
+        btnEventbus.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(StartOneActitity.this, EventBusTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
         tv = (TextView) findViewById(R.id.tv_test);
 
 
@@ -74,6 +93,7 @@ public class StartOneActitity extends Activity {
         String str = iTmp.length > 10 ? "Good" : "no";
 
         Debug.startMethodTracing();
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -169,8 +189,15 @@ public class StartOneActitity extends Activity {
     protected void onDestroy() {
         Log.i(TAG, "mydebug onDestroy()");
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
         Debug.stopMethodTracing();
     }
+
+    @Subscribe (threadMode = ThreadMode.MAIN)
+    public void onEvent (MessageEvent messageEvent) {
+        tv.setText(messageEvent.getMessage());
+    }
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

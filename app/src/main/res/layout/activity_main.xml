@@ -489,6 +489,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="71 Recycle View Test"/>
+
+            <Button
+                android:id="@+id/btn_event_bus_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="72 Event Bus Test"/>
         </LinearLayout>
 
     </ScrollView>

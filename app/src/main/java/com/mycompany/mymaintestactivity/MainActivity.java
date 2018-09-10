@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.ViewTouchEvent.ViewTouchEventTestActivity;
 import com.mycompany.BinderTest.BinderTestActivity;
+import com.mycompany.eventbus.EventBusTestActivity;
 import com.mycompany.fragment.FragmentPracticeActivity;
 import com.mycompany.fragment.FragmentTestActivity;
 import com.mycompany.Messenger.MessengerTestActivity;
@@ -123,6 +124,7 @@ public class MainActivity extends Activity {
     Button btnButterKnifeTest;
     Button btnSurfaceTest;
     Button btnRecyclerViewTest;
+    Button btnEventBusTest;
 
 
     private static Context Scontext;
@@ -218,6 +220,7 @@ public class MainActivity extends Activity {
         btnButterKnifeTest = (Button) findViewById(R.id.btn_annotation_test);
         btnSurfaceTest = (Button) findViewById(R.id.btn_surface_test);
         btnRecyclerViewTest = (Button) findViewById(R.id.btn_recycle_view_test);
+        btnEventBusTest = (Button) findViewById(R.id.btn_event_bus_test);
         btn1.setOnClickListener(listener);
         btn2.setOnClickListener(listener);
         btnSecond.setOnClickListener(listener);
@@ -291,6 +294,7 @@ public class MainActivity extends Activity {
         btnButterKnifeTest.setOnClickListener(listener);
         btnSurfaceTest.setOnClickListener(listener);
         btnRecyclerViewTest.setOnClickListener(listener);
+        btnEventBusTest.setOnClickListener(listener);
 
         float xdpi = getResources().getDisplayMetrics().xdpi;
         float ydpi = getResources().getDisplayMetrics().ydpi;
@@ -713,6 +717,10 @@ public class MainActivity extends Activity {
 
                 case R.id.btn_recycle_view_test:
                     launchRecyclerViewTestActivity();
+                    break;
+
+                case R.id.btn_event_bus_test:
+                    launchEventBuSTestActivity();
                     break;
 
                 default:
@@ -1167,6 +1175,12 @@ public class MainActivity extends Activity {
     private void launchRecyclerViewTestActivity() {
         Intent intent = new Intent();
         intent.setClass(this, RecycleViewTest.class);
+        startActivity(intent);
+    }
+
+    private void launchEventBuSTestActivity() {
+        Intent intent = new Intent();
+        intent.setClass(this, EventBusTestActivity.class);
         startActivity(intent);
     }
 
