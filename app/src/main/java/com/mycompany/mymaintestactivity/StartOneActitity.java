@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Debug;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -50,6 +51,9 @@ public class StartOneActitity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(StartOneActitity.this, StartOneActitity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("one", "Start me again!!");
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -68,6 +72,8 @@ public class StartOneActitity extends Activity {
 
         iTmp = new String[100];
         String str = iTmp.length > 10 ? "Good" : "no";
+
+        Debug.startMethodTracing();
     }
 
     @Override
@@ -163,6 +169,7 @@ public class StartOneActitity extends Activity {
     protected void onDestroy() {
         Log.i(TAG, "mydebug onDestroy()");
         super.onDestroy();
+        Debug.stopMethodTracing();
     }
 
     @Override
@@ -219,6 +226,25 @@ public class StartOneActitity extends Activity {
     protected void onNewIntent(Intent intent) {
         Log.i(TAG, "mydebug onNewIntent()");
         super.onNewIntent(intent);
+
+        Bundle data = intent.getExtras();
+        if (data != null) {
+            Log.i(TAG, "onNewIntent()  intent Data:" + data.getString("one"));
+            tv.setText(data.getString("one"));
+        }
+
+        Intent tmpIntent = getIntent();
+        Bundle tmpData = tmpIntent.getExtras();
+        if (tmpData != null) {
+            Log.i(TAG, "onNewIntent()  intent Data:" + tmpData.getString("one"));
+            tv.setText(tmpData.getString("one"));
+        }
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        Log.i(TAG, "onWindowFocusChanged()  hasFocus:" + hasFocus);
+        super.onWindowFocusChanged(hasFocus);
     }
 
     public void OnFinish(View view) {

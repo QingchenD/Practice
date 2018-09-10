@@ -49,7 +49,7 @@ public class SecondActivity extends Activity {
     }
 
     public void startActivity( View view) {
-        Intent intent = new Intent(this,MainActivity.class); //StartOneActitity.class);
+        Intent intent = new Intent(this, StartOneActitity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

@@ -728,6 +728,9 @@ public class MainActivity extends Activity {
 
         Intent intent = new Intent("com.mycompany.mymaintestactivity.ACTION_START");
         intent.addCategory("android.intent.category.MY_CATEGORY");
+        Bundle bundle = new Bundle();
+        bundle.putString("one", "This may be the first start!!!");
+        intent.putExtras(bundle);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         final PackageManager packageManager = getPackageManager();

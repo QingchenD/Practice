@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:onClick="implicitStartActivity"
-        android:text="Inplicit Start Activity"/>
+        android:text="Implicit Start Activity"/>
 
     <Button
         android:id="@+id/btn_start_ohter_activity"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:onClick="implicitStartOhterActivity"
-        android:text="Inplicit Start other Activity"/>
+        android:text="Implicit Start other Activity"/>
 
     <Button
         android:id="@+id/btn_dial"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:onClick="implicitStartDialActivity"
-        android:text="Inplicit Start Dial Activity"/>
+        android:text="Implicit Start Dial Activity"/>
 
     <Button
         android:id="@+id/finishBtn"

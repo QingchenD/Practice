@@ -24,6 +24,7 @@ public class BinderTestActivity extends Activity {
             if (service instanceof BinderService.LocalBinder) {
                 mService = ((BinderService.LocalBinder) service).getService();
             }
+
         }
 
         @Override

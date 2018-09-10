@@ -74,7 +74,7 @@ public class AsyncTaskTestActivity extends Activity {
         });
 
         //dialogTask = new MyAsyncTaskDialog();
-        //dialogTask.execute();
+        dialogTask.execute();
 
         tvTask1 = new AsyncTaskTextView(R.id.text_1);
         //tvTask1.execute();
