@@ -32,12 +32,14 @@ import com.mycompany.net.NetClientActivity;
 import com.mycompany.net.NetServerActivity;
 import com.mycompany.net.OkHttpTestActivity;
 import com.mycompany.recycleview.RecycleViewTest;
+import com.mycompany.rxjava.RxJavaTestActivity;
 import com.mycompany.surface.SurfaceViewTestActivty;
 
 import java.security.Security;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -125,6 +127,7 @@ public class MainActivity extends Activity {
     Button btnSurfaceTest;
     Button btnRecyclerViewTest;
     Button btnEventBusTest;
+    Button btnRxJavaTest;
 
 
     private static Context Scontext;
@@ -133,6 +136,7 @@ public class MainActivity extends Activity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         Log.i(TAG, "Mydebug" + "onCreate() ");
         if (savedInstanceState != null) {
@@ -221,6 +225,7 @@ public class MainActivity extends Activity {
         btnSurfaceTest = (Button) findViewById(R.id.btn_surface_test);
         btnRecyclerViewTest = (Button) findViewById(R.id.btn_recycle_view_test);
         btnEventBusTest = (Button) findViewById(R.id.btn_event_bus_test);
+        btnRxJavaTest = (Button) findViewById(R.id.btn_rxjava_test);
         btn1.setOnClickListener(listener);
         btn2.setOnClickListener(listener);
         btnSecond.setOnClickListener(listener);
@@ -295,6 +300,7 @@ public class MainActivity extends Activity {
         btnSurfaceTest.setOnClickListener(listener);
         btnRecyclerViewTest.setOnClickListener(listener);
         btnEventBusTest.setOnClickListener(listener);
+        btnRxJavaTest.setOnClickListener(listener);
 
         float xdpi = getResources().getDisplayMetrics().xdpi;
         float ydpi = getResources().getDisplayMetrics().ydpi;
@@ -723,6 +729,10 @@ public class MainActivity extends Activity {
                     launchEventBuSTestActivity();
                     break;
 
+                case R.id.btn_rxjava_test:
+                    launchRxJavaTestActivity();
+                    break;
+
                 default:
                     break;
             }
@@ -1026,7 +1036,6 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-
     private void launchMotionEventTestActivity() {
         Intent intent = new Intent();
         intent.setClass(this, MotionEventTestActivity.class);
@@ -1181,6 +1190,12 @@ public class MainActivity extends Activity {
     private void launchEventBuSTestActivity() {
         Intent intent = new Intent();
         intent.setClass(this, EventBusTestActivity.class);
+        startActivity(intent);
+    }
+
+    private void launchRxJavaTestActivity() {
+        Intent intent = new Intent();
+        intent.setClass(this, RxJavaTestActivity.class);
         startActivity(intent);
     }
 

@@ -102,6 +102,7 @@ public class RecycleViewTest extends Activity {
 
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(manager);
+        manager.canScrollHorizontally();
 
         mRecyclerView.setAdapter(mAdapter = new HomeAdapter());
         mAdapter.setOnItemClickLitener(new OnItemClickLitener()
@@ -127,6 +128,7 @@ public class RecycleViewTest extends Activity {
         mRecyclerView.addItemDecoration(new DividerGridItemDecoration(this));
 
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());// 设置item动画
+
 
     }
 

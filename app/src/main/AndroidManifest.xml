@@ -320,6 +320,8 @@
 
         <activity android:name="com.mycompany.eventbus.EventBusTestActivity" />
 
+        <activity android:name="com.mycompany.rxjava.RxJavaTestActivity" />
+
         <receiver android:name=".BootCompleteReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
