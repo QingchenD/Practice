@@ -24,12 +24,14 @@
                 android:id="@+id/btn1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn1Click"
                 android:text="1 StartActivity"/>
 
             <Button
                 android:id="@+id/btn_seccond"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn2Click"
                 android:text="2 SecondActivity"/>
 
             <LinearLayout
@@ -43,6 +45,7 @@
                     android:paddingRight="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="onStartActivityForResultClick"
                     android:text="StartActivityForResult"/>
 
                 <TextView
@@ -63,12 +66,14 @@
                 android:id="@+id/btn_singleton_tst"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onSingletonClick"
                 android:text="3 Singleton"/>
 
             <Button
                 android:id="@+id/btn_sync_tst"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onThreadSyncClick"
                 android:text="4 Thread Sync Test"/>
 
 
@@ -76,6 +81,7 @@
                 android:id="@+id/btn_popWindow_tst"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn5Click"
                 android:text="5 POP Window"/>
 
 
@@ -83,36 +89,42 @@
                 android:id="@+id/btn_XYSeries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn6Click"
                 android:text="6 XYMultipleSeriesRenderer"/>
 
             <Button
                 android:id="@+id/btn_playAudio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn7Click"
                 android:text="7 Play Audio"/>
 
             <Button
                 android:id="@+id/btn_playVideo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onPlayVideoClick"
                 android:text="Play Video"/>
 
             <Button
                 android:id="@+id/btn_open_file"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn8Click"
                 android:text="8 Open File"/>
 
             <Button
                 android:id="@+id/btn_vibrate_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn9Click"
                 android:text="9 Vibrate"/>
 
             <Button
                 android:id="@+id/btn_service_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn10Click"
                 android:text="10 Service Test"/>
 
 
@@ -120,12 +132,14 @@
                 android:id="@+id/btn_textureview_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn11Click"
                 android:text="11 TextureView Test"/>
 
             <Button
                 android:id="@+id/btn_show_img"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn12Click"
                 android:text="12 Show Img"/>
 
 
@@ -133,6 +147,7 @@
                 android:id="@+id/btn_scan_file"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn13Click"
                 android:text="13 Scan File"/>
 
 
@@ -140,12 +155,14 @@
                 android:id="@+id/btn_date_format"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn14Click"
                 android:text="14 Date Format Test"/>
 
             <Button
                 android:id="@+id/btn_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn15Click"
                 android:text="15 Message"/>
 
 
@@ -153,150 +170,175 @@
                 android:id="@+id/btn_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="16 Static Fragment"/>\
+                android:onClick="onBtn16Click"
+                android:text="16 Static Fragment"/>
 
             <Button
                 android:id="@+id/btn_fragment_practice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn17Click"
                 android:text="17 Fragment  Practice"/>
 
             <Button
                 android:id="@+id/btn_network_change"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn18Click"
                 android:text="18 Network change Receiver"/>
 
             <Button
                 android:id="@+id/btn_send_broadcast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn19Click"
                 android:text="19 Send Broadcast Test"/>
 
             <Button
                 android:id="@+id/btn_broadcast_practice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn20Click"
                 android:text="20 Broadcast best practice"/>
 
             <Button
                 android:id="@+id/btn_save_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn21Click"
                 android:text="21 Save Data to File"/>
 
             <Button
                 android:id="@+id/btn_ym2ip"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn22Click"
                 android:text="22 DNS Test"/>
 
             <Button
                 android:id="@+id/btn_shared_preference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn23Click"
                 android:text="23 SharedPreference"/>
 
             <Button
                 android:id="@+id/btn_sql_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn24Click"
                 android:text="24 SQLiteDataBase Practice"/>
 
             <Button
                 android:id="@+id/btn_read_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn25Click"
                 android:text="25 Read Contacts"/>
 
             <Button
                 android:id="@+id/btn_notification_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn26Click"
                 android:text="26 Notification Test"/>
 
             <Button
                 android:id="@+id/btn_sms_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn27Click"
                 android:text="27 SMS TEST"/>
 
             <Button
                 android:id="@+id/btn_choose_pic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn28Click"
                 android:text="28 Choose Picture Test"/>
 
             <Button
                 android:id="@+id/btn_blue_tooth_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn29Click"
                 android:text="29 Blue Tooth Test"/>
 
             <Button
                 android:id="@+id/btn_my_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn30Click"
                 android:text="30 MyService"/>
 
             <Button
                 android:id="@+id/btn_service_best_practice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn31Click"
                 android:text="31 Service Best Practice"/>
 
             <Button
                 android:id="@+id/btn_webView_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn32Click"
                 android:text="32 WebView Test"/>
 
             <Button
                 android:id="@+id/btn_http_connection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn33Click"
                 android:text="33 Http Connection"/>
 
             <Button
                 android:id="@+id/btn_location_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn34Click"
                 android:text="34 Location Test"/>
 
             <Button
                 android:id="@+id/btn_light_sensor_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn35Click"
                 android:text="35 Light Sensor Test"/>
 
             <Button
                 android:id="@+id/btn_accelerometer_sensor_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn36Click"
                 android:text="36 Accelerometer Sensor Test"/>
 
             <Button
                 android:id="@+id/btn_compass_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn37Click"
                 android:text="37 Compass Test"/>
 
             <Button
                 android:id="@+id/btn_filter_file"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn38Click"
                 android:text="38 Filter Test"/>
 
             <Button
                 android:id="@+id/btn_landscape_portrait"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn39Click"
                 android:text="39 Landscape portrait Test"/>
 
             <Button
                 android:id="@+id/btn_handler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn40Click"
                 android:text="40 Handler Test"/>
 
 
@@ -304,24 +346,28 @@
                 android:id="@+id/btn_json"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn41Click"
                 android:text="41 JSON Test"/>
 
             <Button
                 android:id="@+id/btn_usb_tst"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn42Click"
                 android:text="42 USB Test"/>
 
             <Button
                 android:id="@+id/btn_Image_test"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn43Click"
                 android:text="43 Set Image Size By Manual"/>
 
             <Button
                 android:id="@+id/btn_connect_usb"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn44Click"
                 android:text="44 Usb Connect Test"/>
 
 
@@ -329,42 +375,49 @@
                 android:id="@+id/btn_seek_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn45Click"
                 android:text="45 My Seek Bar Test"/>
 
             <Button
                 android:id="@+id/btn_wifi_hotspot"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn46Click"
                 android:text="46 Set WiFi Hot Spot"/>
 
             <Button
                 android:id="@+id/btn_motion_event"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="onBtn47Click"
                 android:text="47 Motion Event Test"/>
 
             <Button
                 android:id="@+id/btn_under_line"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn48Click"
                 android:text="48 Under Line Test"/>
 
             <Button
                 android:id="@+id/btn_qr_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn49Click"
                 android:text="49 QRCode Test"/>
 
             <Button
                 android:id="@+id/btn_phone_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn50Click"
                 android:text="50 Get Phone Information"/>
 
             <Button
                 android:id="@+id/btn_dialog_tst"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn51Click"
                 android:text="51 Diaglog Test"/>
 
 
@@ -372,48 +425,56 @@
                 android:id="@+id/btn_net_client"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn52Click"
                 android:text="52 Netty Client"/>
 
             <Button
                 android:id="@+id/btn_net_server"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn53Click"
                 android:text="53 Netty Server"/>
 
             <Button
                 android:id="@+id/btn_get_mac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn54Click"
                 android:text="54 Get MAC"/>
 
             <Button
                 android:id="@+id/btn_get_permission"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn55Click"
                 android:text="55 Android 6.0 permission"/>
 
             <Button
                 android:id="@+id/btn_move_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn56Click"
                 android:text="56 Move view"/>
 
             <Button
                 android:id="@+id/btn_animator"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn57Click"
                 android:text = "57 Animator Test"/>
 
             <Button
                 android:id="@+id/btn_kotlin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn58Click"
                 android:text = "58 Kotlin Test"/>
 
             <Button
                 android:id="@+id/btn_record_audio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn59Click"
                 android:text="59 Audio Record"/>
 
 
@@ -421,12 +482,14 @@
                 android:id="@+id/btn_lanchmode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn60Click"
                 android:text="60 Launch mode Test"/>
 
             <Button
                 android:id="@+id/btn_scroll_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn61Click"
                 android:text="61 Scroll contain list"/>
 
 
@@ -434,73 +497,92 @@
                 android:id="@+id/btn_aidl_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn62Click"
                 android:text="62 Aidl Test"/>
 
             <Button
                 android:id="@+id/btn_async_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn63Click"
                 android:text="63 AsyncTask Test"/>
 
             <Button
                 android:id="@+id/btn_okhttp_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn64Click"
                 android:text="64 OkHttp Test"/>
 
             <Button
                 android:id="@+id/btn_event_touch_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn65Click"
                 android:text="65 View Event Touch Test"/>
 
             <Button
                 android:id="@+id/btn_messenger_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn66Click"
                 android:text="66 Messenger Test"/>
 
             <Button
                 android:id="@+id/btn_binder_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn67Click"
                 android:text="67 Binder service Test"/>
 
             <Button
                 android:id="@+id/btn_popup_menu_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn68Click"
                 android:text="68 Popup menu Test"/>
 
             <Button
                 android:id="@+id/btn_annotation_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn69Click"
                 android:text="69 Annotation Test"/>
 
             <Button
                 android:id="@+id/btn_surface_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn70Click"
                 android:text="70 SurfaceView Test"/>
 
             <Button
                 android:id="@+id/btn_recycle_view_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn71Click"
                 android:text="71 Recycle View Test"/>
 
             <Button
                 android:id="@+id/btn_event_bus_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn72Click"
                 android:text="72 Event Bus Test"/>
 
             <Button
                 android:id="@+id/btn_rxjava_test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onBtn73Click"
                 android:text="73 RxJava Test"/>
+
+            <Button
+                android:id="@+id/btn_thread_local_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onThreadLocalClick"
+                android:text="74 ThreadLocal Test"/>
         </LinearLayout>
 
     </ScrollView>

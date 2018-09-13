@@ -34,6 +34,7 @@ import com.mycompany.net.OkHttpTestActivity;
 import com.mycompany.recycleview.RecycleViewTest;
 import com.mycompany.rxjava.RxJavaTestActivity;
 import com.mycompany.surface.SurfaceViewTestActivty;
+import com.mycompany.threadLocal.ThreadLocalTestActivity;
 
 import java.security.Security;
 import java.util.List;
@@ -48,89 +49,7 @@ public class MainActivity extends Activity {
 
     public final int ACTIVITY_REQESET_CODE = 2;
 
-    Button btn1;
-    Button btn2;
-    Button btnSecond;
     TextView btn2BackText;
-    Button btnSingleton;
-    Button btnSyncTest;
-    Button btnPopupWindow;
-    Button btnXYSeries;
-    Button btnPlayAudio;
-    Button btnPlayVideo;
-    Button btnOpenFile;
-    Button btnVibrateTest;
-    Button btnServiceTest;
-    Button btnTextureViewTest;
-    Button btnShowImg;
-    Button btnScanFile;
-    Button btnDateFormat;
-    Button btnMessage;
-    Button btnFragment;
-    Button btnFragmentBestPractice;
-    Button btnNetworkChange;
-    Button btnSendBroadcast;
-    Button btnBroadcastPractice;
-    Button btnSaveData;
-    Button btnym2ip;
-    Button btnSharedPreference;
-    Button btnSQLiteDatabase;
-    Button btnReadContact;
-    Button btnNotificationTest;
-    Button btnSmsTest;
-    Button btnChoosePic;
-    Button btnBluetooth;
-    Button btnMyService;
-    Button btnServiceBestPractice;
-    Button btnWebViewTest;
-    Button btnHttpConnection;
-    Button btnLocationTest;
-    Button btnLightSensorTest;
-    Button btnAccelerometerSensorTest;
-    Button btnCompassTest;
-    Button btnFilterFile;
-    Button btnLandPort;
-    Button btnHandlerTest;
-    Button btnJSON;
-    Button btnUsb;
-    Button btnImageTst;
-    Button btnConnectUsb;
-    Button btnSeekBar;
-    Button btnWiFiHotSpot;
-    Button btnMotionEventTest;
-    Button btnUnderLine;
-    Button btnQrCode;
-    Button btnPhoneInfo;
-    Button btnDialogTst;
-    Button btnNetClient;
-    Button btnNetServer;
-    Button btnGetMac;
-    Button btnGetPermission;
-    Button btnMoveView;
-    Button btnAnimator;
-    Button btnKotlin;
-    Button btnAudioRecord;
-    Button btnLaunchMode;
-    Button btnScrollContainList;
-
-    @Bind(R.id.btn_aidl_test)
-    Button btnAidlTest;
-
-    Button btnAsyncTask;
-    Button btnOkhttp;
-
-    Button btnEventTouchTest;
-    Button btnMessengerTest;
-    Button btnBinderTest;
-    Button btnPopupMenuTest;
-    Button btnButterKnifeTest;
-    Button btnSurfaceTest;
-    Button btnRecyclerViewTest;
-    Button btnEventBusTest;
-    Button btnRxJavaTest;
-
-
-    private static Context Scontext;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -150,157 +69,8 @@ public class MainActivity extends Activity {
         }
 
         MyOnClickListener listener = new MyOnClickListener();
-        btn1 = (Button) findViewById(R.id.btn1);
-        btn2 = (Button) findViewById(R.id.btn2);
-        btnSecond = (Button) findViewById(R.id.btn_seccond);
+
         btn2BackText = (TextView) findViewById(R.id.text_btn2_result);
-        btnSingleton = (Button) findViewById(R.id.btn_singleton_tst);
-        btnSyncTest = (Button) findViewById(R.id.btn_sync_tst);
-        btnPopupWindow = (Button) findViewById(R.id.btn_popWindow_tst);
-        btnXYSeries = (Button) findViewById(R.id.btn_XYSeries);
-        btnPlayAudio = (Button) findViewById(R.id.btn_playAudio);
-        btnPlayVideo = (Button) findViewById(R.id.btn_playVideo);
-        btnOpenFile = (Button) findViewById(R.id.btn_open_file);
-        btnVibrateTest = (Button) findViewById(R.id.btn_vibrate_test);
-        btnServiceTest = (Button) findViewById(R.id.btn_service_test);
-        btnTextureViewTest = (Button) findViewById(R.id.btn_textureview_test);
-        btnShowImg = (Button) findViewById(R.id.btn_show_img);
-        btnScanFile = (Button) findViewById(R.id.btn_scan_file);
-        btnDateFormat = (Button) findViewById(R.id.btn_date_format);
-        btnMessage = (Button) findViewById(R.id.btn_message);
-        btnFragment = (Button) findViewById(R.id.btn_fragment);
-        btnFragmentBestPractice = (Button) findViewById(R.id.btn_fragment_practice);
-        btnNetworkChange = (Button) findViewById(R.id.btn_network_change);
-        btnSendBroadcast = (Button) findViewById(R.id.btn_send_broadcast);
-        btnBroadcastPractice = (Button) findViewById(R.id.btn_broadcast_practice);
-        btnSaveData = (Button) findViewById(R.id.btn_save_data);
-        btnym2ip = (Button) findViewById(R.id.btn_ym2ip);
-        btnSharedPreference = (Button) findViewById(R.id.btn_shared_preference);
-        btnSQLiteDatabase = (Button) findViewById(R.id.btn_sql_test);
-        btnReadContact = (Button) findViewById(R.id.btn_read_contact);
-        btnNotificationTest = (Button) findViewById(R.id.btn_notification_test);
-        btnSmsTest = (Button) findViewById(R.id.btn_sms_test);
-        btnChoosePic = (Button) findViewById(R.id.btn_choose_pic);
-        btnBluetooth = (Button) findViewById(R.id.btn_blue_tooth_test);
-        btnMyService = (Button) findViewById(R.id.btn_my_service);
-        btnServiceBestPractice = (Button) findViewById(R.id.btn_service_best_practice);
-        btnWebViewTest = (Button) findViewById(R.id.btn_webView_test);
-        btnHttpConnection = (Button) findViewById(R.id.btn_http_connection);
-        btnLocationTest = (Button) findViewById(R.id.btn_location_test);
-        btnLightSensorTest = (Button) findViewById(R.id.btn_light_sensor_test);
-        btnAccelerometerSensorTest = (Button) findViewById(R.id.btn_accelerometer_sensor_test);
-        btnCompassTest = (Button) findViewById(R.id.btn_compass_test);
-        btnFilterFile = (Button) findViewById(R.id.btn_filter_file);
-        btnLandPort = (Button) findViewById(R.id.btn_landscape_portrait);
-        btnHandlerTest = (Button) findViewById(R.id.btn_handler);
-        btnJSON = (Button) findViewById(R.id.btn_json);
-        btnUsb = (Button) findViewById(R.id.btn_usb_tst);
-        btnImageTst = (Button) findViewById(R.id.btn_Image_test);
-        btnConnectUsb = (Button) findViewById(R.id.btn_connect_usb);
-        btnSeekBar = (Button) findViewById(R.id.btn_seek_bar);
-        btnWiFiHotSpot = (Button) findViewById(R.id.btn_wifi_hotspot);
-        btnMotionEventTest  = (Button) findViewById(R.id.btn_motion_event);
-        btnUnderLine = (Button) findViewById(R.id.btn_under_line);
-        btnQrCode = (Button) findViewById(R.id.btn_qr_code);
-        btnPhoneInfo = (Button) findViewById(R.id.btn_phone_info);
-        btnDialogTst = (Button) findViewById(R.id.btn_dialog_tst);
-        btnNetClient = (Button) findViewById(R.id.btn_net_client);
-        btnNetServer = (Button) findViewById(R.id.btn_net_server);
-        btnGetMac = (Button) findViewById(R.id.btn_get_mac);
-        btnGetPermission = (Button) findViewById(R.id.btn_get_permission);
-        btnMoveView = (Button) findViewById(R.id.btn_move_view);
-        btnAnimator = (Button) findViewById(R.id.btn_animator);
-        btnKotlin = (Button) findViewById(R.id.btn_kotlin);
-        btnAudioRecord = (Button) findViewById(R.id.btn_record_audio);
-        btnLaunchMode = (Button) findViewById(R.id.btn_lanchmode);
-        btnScrollContainList = (Button) findViewById(R.id.btn_scroll_list);
-        btnAidlTest = (Button) findViewById(R.id.btn_aidl_test);
-        btnAsyncTask = (Button) findViewById(R.id.btn_async_test);
-        btnOkhttp = (Button) findViewById(R.id.btn_okhttp_test);
-        btnEventTouchTest = (Button) findViewById(R.id.btn_event_touch_test);
-        btnMessengerTest = (Button) findViewById(R.id.btn_messenger_test);
-        btnBinderTest = (Button) findViewById(R.id.btn_binder_test);
-        btnPopupMenuTest = (Button) findViewById(R.id.btn_popup_menu_test);
-        btnButterKnifeTest = (Button) findViewById(R.id.btn_annotation_test);
-        btnSurfaceTest = (Button) findViewById(R.id.btn_surface_test);
-        btnRecyclerViewTest = (Button) findViewById(R.id.btn_recycle_view_test);
-        btnEventBusTest = (Button) findViewById(R.id.btn_event_bus_test);
-        btnRxJavaTest = (Button) findViewById(R.id.btn_rxjava_test);
-        btn1.setOnClickListener(listener);
-        btn2.setOnClickListener(listener);
-        btnSecond.setOnClickListener(listener);
-        btnSingleton.setOnClickListener(listener);
-        btnSyncTest.setOnClickListener(listener);
-        btnPopupWindow.setOnClickListener(listener);
-        btnXYSeries.setOnClickListener(listener);
-        btnPlayAudio.setOnClickListener(listener);
-        btnPlayVideo.setOnClickListener(listener);
-        btnOpenFile.setOnClickListener(listener);
-        btnVibrateTest.setOnClickListener(listener);
-        btnServiceTest.setOnClickListener(listener);
-        btnTextureViewTest.setOnClickListener(listener);
-        btnShowImg.setOnClickListener(listener);
-        btnScanFile.setOnClickListener(listener);
-        btnDateFormat.setOnClickListener(listener);
-        btnMessage.setOnClickListener(listener);
-        btnFragment.setOnClickListener(listener);
-        btnFragmentBestPractice.setOnClickListener(listener);
-        btnNetworkChange.setOnClickListener(listener);
-        btnSendBroadcast.setOnClickListener(listener);
-        btnBroadcastPractice.setOnClickListener(listener);
-        btnSaveData.setOnClickListener(listener);
-        btnym2ip.setOnClickListener(listener);
-        btnSharedPreference.setOnClickListener(listener);
-        btnSQLiteDatabase.setOnClickListener(listener);
-        btnReadContact.setOnClickListener(listener);
-        btnNotificationTest.setOnClickListener(listener);
-        btnSmsTest.setOnClickListener(listener);
-        btnChoosePic.setOnClickListener(listener);
-        btnBluetooth.setOnClickListener(listener);
-        btnMyService.setOnClickListener(listener);
-        btnServiceBestPractice.setOnClickListener(listener);
-        btnWebViewTest.setOnClickListener(listener);
-        btnHttpConnection.setOnClickListener(listener);
-        btnLocationTest.setOnClickListener(listener);
-        btnLightSensorTest.setOnClickListener(listener);
-        btnAccelerometerSensorTest.setOnClickListener(listener);
-        btnCompassTest.setOnClickListener(listener);
-        btnFilterFile.setOnClickListener(listener);
-        btnLandPort.setOnClickListener(listener);
-        btnHandlerTest.setOnClickListener(listener);
-        btnJSON.setOnClickListener(listener);
-        btnUsb.setOnClickListener(listener);
-        btnImageTst.setOnClickListener(listener);
-        btnConnectUsb.setOnClickListener(listener);
-        btnSeekBar.setOnClickListener(listener);
-        btnWiFiHotSpot.setOnClickListener(listener);
-        btnMotionEventTest.setOnClickListener(listener);
-        btnUnderLine.setOnClickListener(listener);
-        btnQrCode.setOnClickListener(listener);
-        btnPhoneInfo.setOnClickListener(listener);
-        btnDialogTst.setOnClickListener(listener);
-        btnNetClient.setOnClickListener(listener);
-        btnNetServer.setOnClickListener(listener);
-        btnGetMac.setOnClickListener(listener);
-        btnGetPermission.setOnClickListener(listener);
-        btnMoveView.setOnClickListener(listener);
-        btnAnimator.setOnClickListener(listener);
-        btnKotlin.setOnClickListener(listener);
-        btnAudioRecord.setOnClickListener(listener);
-        btnLaunchMode.setOnClickListener(listener);
-        btnScrollContainList.setOnClickListener(listener);
-        btnAidlTest.setOnClickListener(listener);
-        btnAsyncTask.setOnClickListener(listener);
-        btnOkhttp.setOnClickListener(listener);
-        btnEventTouchTest.setOnClickListener(listener);
-        btnMessengerTest.setOnClickListener(listener);
-        btnBinderTest.setOnClickListener(listener);
-        btnPopupMenuTest.setOnClickListener(listener);
-        btnButterKnifeTest.setOnClickListener(listener);
-        btnSurfaceTest.setOnClickListener(listener);
-        btnRecyclerViewTest.setOnClickListener(listener);
-        btnEventBusTest.setOnClickListener(listener);
-        btnRxJavaTest.setOnClickListener(listener);
 
         float xdpi = getResources().getDisplayMetrics().xdpi;
         float ydpi = getResources().getDisplayMetrics().ydpi;
@@ -430,308 +200,7 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.btn1:
-                    launchActivityone();
-                    break;
 
-                case R.id.btn2:
-                    launchActivityTwo();
-                    break;
-
-                case R.id.btn_seccond:
-                    launchSecondActivity();
-                    break;
-
-                case R.id.btn_singleton_tst:
-                    launchSingletonActivity();
-                    break;
-
-                case R.id.btn_sync_tst:
-                    launchThreadSyncActivity();
-                    break;
-
-                case R.id.btn_popWindow_tst:
-                    launchPopupWindowActivity();
-                    break;
-
-                case R.id.btn_XYSeries:
-                    launchXySeriesActivity();
-                    break;
-
-                case R.id.btn_playAudio:
-                    launchPlayAudioActivity();
-                    break;
-
-                case R.id.btn_playVideo:
-                    launchPlayVideoActivity();
-                    break;
-
-                case R.id.btn_open_file:
-                    launchOpenFileActivity();
-                    break;
-
-                case R.id.btn_vibrate_test:
-                    launchVirbrateActivity();
-                    break;
-
-                case R.id.btn_service_test:
-                    launchServiceDemoActivity();
-                    break;
-
-                case R.id.btn_textureview_test:
-                    launchTextureViewActivity();
-                    break;
-
-                case R.id.btn_show_img:
-                    launchShowImgActivity();
-                    break;
-
-                case R.id.btn_scan_file:
-                    launchScanFileActivity();
-                    break;
-
-                case R.id.btn_date_format:
-                    launchDateFormatActivity();
-                    break;
-
-                case R.id.btn_message:
-                    launchMessageActivity();
-                    break;
-
-                case R.id.btn_fragment:
-                    launchFragmentActivity();
-                    break;
-
-                case R.id.btn_fragment_practice:
-                    launchFragmentPracticeActivity();
-                    break;
-
-                case R.id.btn_network_change:
-                    launchNetworkChangeActivity();
-                    break;
-
-                case R.id.btn_send_broadcast:
-                    launchSendBraodcastActivity();
-                    break;
-
-                case R.id.btn_broadcast_practice:
-                    launchBroadcastPracticeActivity();
-                    break;
-
-                case R.id.btn_save_data:
-                    launchSaveDataActivity();
-                    break;
-
-                case R.id.btn_ym2ip:
-                    launchYm2IPTestActivity();
-                    break;
-
-                case R.id.btn_shared_preference:
-                    launchSharePreferenceActivity();
-                    break;
-
-                case R.id.btn_sql_test:
-                    launchSQLiteDatabaseActivity();
-                    break;
-
-                case R.id.btn_read_contact:
-                    launReadContactsActivity();
-                    break;
-
-                case R.id.btn_notification_test:
-                    launchNotificationActivity();
-                    break;
-
-                case R.id.btn_sms_test:
-                    launchSMSTestActivity();
-                    break;
-
-                case R.id.btn_choose_pic:
-                    launchChoosePicTestActivity();
-                    break;
-
-
-                case R.id.btn_blue_tooth_test:
-                    launchBlueToothTestActivity();
-                    break;
-
-                case R.id.btn_my_service:
-                    launchMyServiceActivity();
-                    break;
-
-                case R.id.btn_service_best_practice:
-                    launchServiceBestPractice();
-                    break;
-
-                case R.id.btn_webView_test:
-                    launchWebviewTestActivity();
-                    break;
-
-                case R.id.btn_http_connection:
-                    launchHttpConnectionActivity();
-                    break;
-
-                case R.id.btn_location_test:
-                    launchLocationTestActivity();
-                    break;
-
-                case R.id.btn_light_sensor_test:
-                    launchLightSensorTestActivity();
-                    break;
-
-                case R.id.btn_accelerometer_sensor_test:
-                    launchAccelerometerSensorTestActivity();
-                    break;
-
-                case R.id.btn_compass_test:
-                    launchCompassTestActivity();
-                    break;
-
-                case R.id.btn_filter_file:
-                    launchFilterFileActivity();
-                    break;
-
-                case R.id.btn_landscape_portrait:
-                    launchLandscapePortraitActivity();
-                    break;
-
-                case R.id.btn_handler:
-                    launchHandlerTestActivity();
-                    break;
-
-                case R.id.btn_json:
-                    launchJSONTestActivity();
-                    break;
-
-                case R.id.btn_usb_tst:
-                    launchUsbTestActivity();
-                    break;
-
-                case R.id.btn_Image_test:
-                    launchSetImageManualActivity();
-                    break;
-
-                case R.id.btn_connect_usb:
-                    launchConnectUsbActivity();
-                    break;
-
-                case R.id.btn_seek_bar:
-                    launchSeekBarTestActivity();
-                    break;
-
-                case R.id.btn_wifi_hotspot:
-                    launchWiFiHotSpotActivity();
-                    break;
-
-
-                case R.id.btn_motion_event:
-                    launchMotionEventTestActivity();
-                    break;
-
-                case R.id.btn_under_line:
-                    launchUnderLineTestActivity();
-                    break;
-
-                case R.id.btn_qr_code:
-                    launchQRCodeTestActivity();
-                    break;
-
-                case R.id.btn_phone_info:
-                    launchPhoneInforActivity();
-                    break;
-
-                case R.id.btn_dialog_tst:
-                    launchDialogTestActivity();
-                    break;
-
-                case R.id.btn_net_client:
-                    launchNetClientActivity();
-                    break;
-
-                case R.id.btn_net_server:
-                    launchNetServerActivity();
-                    break;
-
-                case R.id.btn_get_mac:
-                    launchGetMACActivity();
-                    break;
-
-                case R.id.btn_get_permission:
-                    launPermissionActivity();
-                    break;
-
-                case R.id.btn_move_view:
-                    launchMoveViewActivity();
-                    break;
-
-
-                case R.id.btn_animator:
-                    launchAnimatorActivity();
-                    break;
-
-                case R.id.btn_kotlin:
-                    launchKotlinActivity();
-                    break;
-
-                case R.id.btn_record_audio:
-                    launchAudioRecordActivity();
-                    break;
-
-                case R.id.btn_lanchmode:
-                    launchModeTestActivity();
-                    break;
-
-                case R.id.btn_scroll_list:
-                    launchScrollContainList();
-                    break;
-
-                case R.id.btn_aidl_test:
-                    launchAidlTestActivity();
-                    break;
-
-                case R.id.btn_async_test:
-                    launchAsyncTaskTestActivity();
-                    break;
-
-                case R.id.btn_okhttp_test:
-                    launchOkHttpTestActivity();
-                    break;
-
-                case R.id.btn_event_touch_test:
-                    launchViewTouchEventTestActivity();
-                    break;
-
-                case R.id.btn_messenger_test:
-                    launchMessengerTestActivity();
-                    break;
-
-                case R.id.btn_binder_test:
-                    launchBinderTestActivity();
-                    break;
-
-                case R.id.btn_popup_menu_test:
-                    launchPopupMenuTestActivity();
-                    break;
-
-                case R.id.btn_annotation_test:
-                    launchAnnotationTestActivity();
-                    break;
-
-                case R.id.btn_surface_test:
-                    launchSurfaceViewTestActivity();
-                    break;
-
-                case R.id.btn_recycle_view_test:
-                    launchRecyclerViewTestActivity();
-                    break;
-
-                case R.id.btn_event_bus_test:
-                    launchEventBuSTestActivity();
-                    break;
-
-                case R.id.btn_rxjava_test:
-                    launchRxJavaTestActivity();
-                    break;
 
                 default:
                     break;
@@ -739,6 +208,317 @@ public class MainActivity extends Activity {
         }
     }
 
+
+    //OnClick function
+    public void onBtn1Click(View v) {
+        launchActivityone();
+    }
+
+    public void onBtn2Click(View v) {
+        launchSecondActivity();
+    }
+
+    public void onStartActivityForResultClick(View v) {
+        launchActivityTwo();
+    }
+
+    public void onSingletonClick(View v) {
+        launchSingletonActivity();
+    }
+
+    public void onThreadSyncClick(View v) {
+        launchThreadSyncActivity();
+    }
+
+    public void onBtn5Click(View v) {
+        launchPopupWindowActivity();
+    }
+
+    public void onBtn6Click(View v) {
+        launchXySeriesActivity();
+    }
+
+    public void onBtn7Click(View v) {
+        launchPlayAudioActivity();
+    }
+
+    public void onPlayVideoClick(View v) {
+        launchPlayVideoActivity();
+    }
+
+    public void onBtn8Click(View v) {
+        launchOpenFileActivity();
+    }
+
+    public void onBtn9Click(View v) {
+        launchVirbrateActivity();
+    }
+
+    public void onBtn10Click(View v) {
+        launchServiceDemoActivity();
+    }
+
+    public void onBtn11Click(View v) {
+        launchTextureViewActivity();
+    }
+
+    public void onBtn12Click(View v) {
+        launchShowImgActivity();
+    }
+
+    public void onBtn13Click(View v) {
+        launchScanFileActivity();
+    }
+
+    public void onBtn14Click(View v) {
+        launchDateFormatActivity();
+    }
+
+    public void onBtn15Click(View v) {
+        launchMessageActivity();
+    }
+
+    public void onBtn16Click(View v) {
+        launchFragmentActivity();
+    }
+
+    public void onBtn17Click(View v) {
+        launchFragmentPracticeActivity();
+    }
+
+    public void onBtn18Click(View v) {
+        launchNetworkChangeActivity();
+    }
+
+    public void onBtn19Click(View v) {
+        launchSendBraodcastActivity();
+    }
+
+    public void onBtn20Click(View v) {
+        launchBroadcastPracticeActivity();
+    }
+
+    public void onBtn21Click(View v) {
+        launchSaveDataActivity();
+    }
+
+    public void onBtn22Click(View v) {
+        launchYm2IPTestActivity();
+    }
+
+    public void onBtn23Click(View v) {
+        launchSharePreferenceActivity();
+    }
+
+    public void onBtn24Click(View v) {
+        launchSQLiteDatabaseActivity();
+    }
+
+    public void onBtn25Click(View v) {
+        launReadContactsActivity();
+    }
+
+    public void onBtn26Click(View v) {
+        launchNotificationActivity();
+    }
+
+    public void onBtn27Click(View v) {
+        launchSMSTestActivity();
+    }
+
+    public void onBtn28Click(View v) {
+        launchChoosePicTestActivity();
+    }
+
+    public void onBtn29Click(View v) {
+        launchBlueToothTestActivity();
+    }
+
+    public void onBtn30Click(View v) {
+        launchMyServiceActivity();
+    }
+
+    public void onBtn31Click(View v) {
+        launchServiceBestPractice();
+    }
+
+    public void onBtn32Click(View v) {
+        launchWebviewTestActivity();
+    }
+
+    public void onBtn33Click(View v) {
+        launchHttpConnectionActivity();
+    }
+
+    public void onBtn34Click(View v) {
+        launchLocationTestActivity();
+    }
+
+    public void onBtn35Click(View v) {
+        launchLightSensorTestActivity();
+    }
+
+    public void onBtn36Click(View v) {
+        launchAccelerometerSensorTestActivity();
+    }
+
+    public void onBtn37Click(View v) {
+        launchCompassTestActivity();
+    }
+
+    public void onBtn38Click(View v) {
+        launchFilterFileActivity();
+    }
+
+    public void onBtn39Click(View v) {
+        launchLandscapePortraitActivity();
+    }
+
+    public void onBtn40Click(View v) {
+        launchHandlerTestActivity();
+    }
+
+    public void onBtn41Click(View v) {
+        launchJSONTestActivity();
+    }
+
+    public void onBtn42Click(View v) {
+        launchSetImageManualActivity();
+    }
+
+    public void onBtn43Click(View v) {
+        launchUsbTestActivity();
+    }
+
+    public void onBtn44Click(View v) {
+        launchConnectUsbActivity();
+    }
+
+    public void onBtn45Click(View v) {
+        launchSeekBarTestActivity();
+    }
+
+    public void onBtn46Click(View v) {
+        launchWiFiHotSpotActivity();
+    }
+
+    public void onBtn47Click(View v) {
+        launchMotionEventTestActivity();
+    }
+
+    public void onBtn48Click(View v) {
+        launchUnderLineTestActivity();
+    }
+
+    public void onBtn49Click(View v) {
+        launchQRCodeTestActivity();
+    }
+
+    public void onBtn50Click(View v) {
+        launchPhoneInforActivity();
+    }
+
+    public void onBtn51Click(View v) {
+        launchDialogTestActivity();
+    }
+
+    public void onBtn52Click(View v) {
+        launchNetClientActivity();
+    }
+
+    public void onBtn53Click(View v) {
+        launchNetServerActivity();
+    }
+
+    public void onBtn54Click(View v) {
+        launchGetMACActivity();
+    }
+
+    public void onBtn55Click(View v) {
+        launPermissionActivity();
+    }
+
+    public void onBtn56Click(View v) {
+        launchMoveViewActivity();
+    }
+
+    public void onBtn57Click(View v) {
+        launchAnimatorActivity();
+    }
+
+    public void onBtn58Click(View v) {
+        launchKotlinActivity();
+    }
+
+    public void onBtn59Click(View v) {
+        launchAudioRecordActivity();
+    }
+
+    public void onBtn60Click(View v) {
+        launchModeTestActivity();
+    }
+
+    public void onBtn61Click(View v) {
+        launchScrollContainList();
+    }
+
+    public void onBtn62Click(View v) {
+        launchAidlTestActivity();
+    }
+
+    public void onBtn63Click(View v) {
+        launchAsyncTaskTestActivity();
+    }
+
+    public void onBtn64Click(View v) {
+        launchOkHttpTestActivity();
+    }
+
+    public void onBtn65Click(View v) {
+        launchViewTouchEventTestActivity();
+    }
+
+    public void onBtn66Click(View v) {
+        launchMessengerTestActivity();
+    }
+
+    public void onBtn67Click(View v) {
+        launchBinderTestActivity();
+    }
+
+    public void onBtn68Click(View v) {
+        launchPopupMenuTestActivity();
+    }
+
+    public void onBtn69Click(View v) {
+        launchAnnotationTestActivity();
+    }
+
+    public void onBtn70Click(View v) {
+        launchSurfaceViewTestActivity();
+    }
+
+    public void onBtn71Click(View v) {
+        launchRecyclerViewTestActivity();
+    }
+
+    public void onBtn72Click(View v) {
+        launchEventBuSTestActivity();
+    }
+
+    public void onBtn73Click(View v) {
+        launchRxJavaTestActivity();
+    }
+
+    public void onThreadLocalClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, ThreadLocalTestActivity.class);
+        startActivity(intent);
+
+    }
+
+
+    //launch function
     private void launchActivityone() {
 //        Intent intent = new Intent(this, StartOneActitity.class);
 //        intent.putExtra("time", System.currentTimeMillis());

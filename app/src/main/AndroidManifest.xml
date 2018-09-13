@@ -322,6 +322,8 @@
 
         <activity android:name="com.mycompany.rxjava.RxJavaTestActivity" />
 
+        <activity android:name="com.mycompany.threadLocal.ThreadLocalTestActivity"/>
+
         <receiver android:name=".BootCompleteReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
