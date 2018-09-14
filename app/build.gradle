@@ -35,7 +35,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:25.4.0'
     implementation 'com.android.support:recyclerview-v7:25.4.0'
    //compile 'com.journeyapps:zxing-android-embedded:3.0.2@aar'
-    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.google.zxing:javase:3.2.1'
     implementation 'com.jakewharton:butterknife:7.0.0'
     //annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
@@ -53,6 +53,11 @@ dependencies {
     //logfactory
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'com.github.tony19:logback-android:1.1.1-13'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 }
 repositories {
     mavenCentral()

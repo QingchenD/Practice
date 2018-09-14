@@ -583,6 +583,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="onThreadLocalClick"
                 android:text="74 ThreadLocal Test"/>
+
+            <Button
+                android:id="@+id/btn_retrofit_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRetrofitClick"
+                android:text="75 Retrofit Test"/>
         </LinearLayout>
 
     </ScrollView>

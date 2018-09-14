@@ -32,6 +32,7 @@ import com.mycompany.net.NetClientActivity;
 import com.mycompany.net.NetServerActivity;
 import com.mycompany.net.OkHttpTestActivity;
 import com.mycompany.recycleview.RecycleViewTest;
+import com.mycompany.retrofit.RetrofitTestActivity;
 import com.mycompany.rxjava.RxJavaTestActivity;
 import com.mycompany.surface.SurfaceViewTestActivty;
 import com.mycompany.threadLocal.ThreadLocalTestActivity;
@@ -514,7 +515,13 @@ public class MainActivity extends Activity {
         Intent intent = new Intent();
         intent.setClass(this, ThreadLocalTestActivity.class);
         startActivity(intent);
+    }
 
+    //75
+    public void onRetrofitClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, RetrofitTestActivity.class);
+        startActivity(intent);
     }
 
 
