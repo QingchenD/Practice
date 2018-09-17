@@ -524,6 +524,14 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    //76
+    public void onImportMiView (View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, MiViewTestActivity.class);
+        startActivity(intent);
+
+    }
+
 
     //launch function
     private void launchActivityone() {

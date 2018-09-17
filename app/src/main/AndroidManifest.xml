@@ -326,6 +326,8 @@
 
         <activity android:name="com.mycompany.retrofit.RetrofitTestActivity" />
 
+        <activity android:name=".MiViewTestActivity" />
+
         <receiver android:name=".BootCompleteReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
