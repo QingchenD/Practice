@@ -43,7 +43,7 @@ public class ReadContactsActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (cursor !=null ) {
+            if (cursor != null ) {
                 cursor.close();
             }
 

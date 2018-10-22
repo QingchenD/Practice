@@ -9,9 +9,23 @@ import android.widget.Button;
 
 import com.mycompany.mymaintestactivity.R;
 
-//import okhttp3.OkHttpClient;
-//import okhttp3.Request;
-//import okhttp3.Response;
+import java.io.IOException;
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
+import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class OkHttpTestActivity extends Activity {
     @Override
@@ -90,17 +104,45 @@ public class OkHttpTestActivity extends Activity {
 
 
     public void getDataSync() {
-        /*
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象
+
+                    OkHttpClient.Builder builder = new OkHttpClient.Builder();
+                    builder.connectTimeout(5, TimeUnit.SECONDS);
+                    builder.sslSocketFactory(createSSLSocketFactory(), new TrustAllCerts());
+                    builder.hostnameVerifier(new HostnameVerifier() {
+                        @Override
+                        public boolean verify(String hostname, SSLSession session) {
+                            return true;
+                        }
+                    });
+
+                    OkHttpClient client = builder.build();
+
+                    //OkHttpClient client = new OkHttpClient();  //创建OkHttpClient对象
+
                     Request request = new Request.Builder()
                             .get()
-                            .url("http://www.baidu.com")//请求接口。如果需要传参拼接到接口后面。
+                            .url("https://www.baidu.com")//请求接口。如果需要传参拼接到接口后面。
+
                             .build();//创建Request 对象
                     Response response = null;
+                    client.newCall(request).enqueue(new Callback() {
+
+                        @Override
+                        public void onFailure(Call call, IOException e) {
+
+                        }
+
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
+
+                        }
+                    });
+
                     response = client.newCall(request).execute();//得到Response 对象
                     if (response.isSuccessful()) {
                         Log.d("Mydebug","response.code()=="+response.code());
@@ -113,6 +155,34 @@ public class OkHttpTestActivity extends Activity {
                 }
             }
         }).start();
-        */
+
     }
+
+
+    private SSLSocketFactory createSSLSocketFactory() {
+        SSLSocketFactory ssfFactory = null;
+
+        try {
+            SSLContext sc = SSLContext.getInstance("TLS");
+            sc.init(null, new TrustManager[]{new TrustAllCerts()}, new SecureRandom());
+
+            ssfFactory = sc.getSocketFactory();
+        } catch (Exception e) {
+        }
+
+        return ssfFactory;
+    }
+
+    public class TrustAllCerts implements X509TrustManager {
+        @Override
+        public void checkClientTrusted(X509Certificate[] chain, String authType) {}
+
+        @Override
+        public void checkServerTrusted(X509Certificate[] chain, String authType) {}
+
+        @Override
+        public X509Certificate[] getAcceptedIssuers() {return new X509Certificate[0];}
+    }
+
 }
+
