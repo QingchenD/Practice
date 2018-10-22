@@ -33,7 +33,6 @@ public class RxJavaTestActivity extends Activity {
     private ListView listView;
     private int[] drawableRes;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +48,7 @@ public class RxJavaTestActivity extends Activity {
     }
 
     //RxJava基本使用
-    private void rxJavaBaseUse(){
+    private void rxJavaBaseUse() {
         //被观察者
         Observable obs = Observable.create(new ObservableOnSubscribe<String>() {
             @Override

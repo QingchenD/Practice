@@ -1,6 +1,9 @@
 package com.mycompany.util;
 
 
+import android.content.res.Resources;
+import android.util.TypedValue;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -46,5 +49,9 @@ public class Util {
     public static String ipToString(int ipAddress) {
         return  ((ipAddress & 0xff) + "." + (ipAddress >> 8 & 0xff) + "."
                 + (ipAddress >> 16 & 0xff) + "." + (ipAddress >> 24 & 0xff));
+    }
+
+    public static int dp2px(float dp) {
+        return  (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, dp, Resources.getSystem().getDisplayMetrics());
     }
 }

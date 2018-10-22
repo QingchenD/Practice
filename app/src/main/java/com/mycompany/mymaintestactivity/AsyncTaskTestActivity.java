@@ -104,8 +104,6 @@ public class AsyncTaskTestActivity extends Activity {
         Log.i("AsyncTaskTestActivity", "mydebug onStop");
     }
 
-
-
     private void cancelTask() {
         if (dialogTask != null && !dialogTask.isCancelled()) {
             dialogTask.cancel(true);

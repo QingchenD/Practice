@@ -26,6 +26,7 @@ import com.mycompany.Messenger.MessengerTestActivity;
 import com.mycompany.aidlTest.AidlTestActivity;
 import com.mycompany.annotation.ButterknifeTestActivity;
 import com.mycompany.broadcastbestpractice.LoginActiviy;
+import com.mycompany.hencoder_practice.HencoderActivity;
 import com.mycompany.launchmodeTest.LaunchModeTestActivity;
 import com.mycompany.menu.PopUpMenuTestActivity;
 import com.mycompany.net.NetClientActivity;
@@ -94,6 +95,15 @@ public class MainActivity extends Activity {
 
 //        SystemClock.sleep(10);
 //        initView();
+
+        final String hello = "hello";
+        //InnerStaticClass inner = new InnerStaticClass();
+
+        new Thread(new Runnable() {
+            public void run() {
+                System.out.println("Hi " + hello);
+            }
+        }).start();
     }
 
     private synchronized void testANR() {
@@ -529,7 +539,13 @@ public class MainActivity extends Activity {
         Intent intent = new Intent();
         intent.setClass(this, MiViewTestActivity.class);
         startActivity(intent);
+    }
 
+    //77
+    public void onHencoderClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, HencoderActivity.class);
+        startActivity(intent);
     }
 
 

@@ -597,6 +597,14 @@
                 android:layout_height="wrap_content"
                 android:onClick="onImportMiView"
                 android:text="76 Import view Test"/>
+
+
+            <Button
+                android:id="@+id/btn_hencoder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onHencoderClick"
+                android:text="77 Hencoder test"/>
         </LinearLayout>
 
     </ScrollView>
