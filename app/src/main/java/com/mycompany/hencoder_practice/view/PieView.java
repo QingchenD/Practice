@@ -14,8 +14,8 @@ import com.mycompany.util.Util;
 
 public class PieView extends View {
 
-    private final int RADIUS = Util.dp2px(200);
-    private final int TRANSLATE_DISTANCE = Util.dp2px(20);
+    private final int RADIUS = Util.dp2px(80);
+    private final int TRANSLATE_DISTANCE = Util.dp2px(6);
     private final Paint paint;
     private int[] angle  = new int[] {60 , 100, 90, 80, 30 };
     private int[] colors = new int[] {Color.GREEN, Color.BLUE, Color.RED, Color.BLACK, Color.YELLOW };
@@ -48,7 +48,7 @@ public class PieView extends View {
         int startAngle = 0;
         for ( int i = 0; i < angle.length; i++) {
             paint.setColor(colors[i]);
-            if (transferIndex == i) {
+            if (true) {
                 canvas.save();
                 canvas.translate(TRANSLATE_DISTANCE * (float)Math.cos(Math.toRadians((startAngle + angle[i] / 2.0f))),
                         TRANSLATE_DISTANCE * (float)Math.sin(Math.toRadians((startAngle + angle[i] / 2.0f))));

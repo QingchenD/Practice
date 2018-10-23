@@ -52,6 +52,6 @@ public class Util {
     }
 
     public static int dp2px(float dp) {
-        return  (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, dp, Resources.getSystem().getDisplayMetrics());
+        return  (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().getDisplayMetrics());
     }
 }

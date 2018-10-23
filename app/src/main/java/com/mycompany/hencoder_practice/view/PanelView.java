@@ -17,10 +17,13 @@ import com.mycompany.util.Util;
 public class PanelView extends View {
     private final int ANGLE = 120;
     private final int PADDING = Util.dp2px(5);
-    private final int RADIUS = Util.dp2px(200);
-    private final int POINTER_LENGTH = Util.dp2px(150);
+    private final int RADIUS = Util.dp2px(80);
+    private final int POINTER_LENGTH = Util.dp2px(50);
     private Paint paint;
     private Path dash;
+    private int pointerIndex;
+    private int keduLength = Util.dp2px(5);
+    private int keduWidth = Util.dp2px(1.5f);
 
     private Path arc;
     private PathEffect pathEffect;
@@ -38,10 +41,12 @@ public class PanelView extends View {
                 ANGLE + 30, 360 - ANGLE);
 
         PathMeasure pathMeasure = new PathMeasure(arc, false);
-        float advance = (pathMeasure.getLength() - Util.dp2px(2) ) / 20;
+        float advance = (pathMeasure.getLength() - keduWidth ) / 20;
         dash = new Path();
-        dash.addRect(0,0,Util.dp2px(2), Util.dp2px(20), Path.Direction.CCW );
+        dash.addRect(0,0, keduWidth, Util.dp2px(keduLength), Path.Direction.CCW );
         pathEffect = new PathDashPathEffect(dash, advance , 0, PathDashPathEffect.Style.ROTATE);
+
+        pointerIndex = 12;
     }
 
     {
@@ -67,8 +72,8 @@ public class PanelView extends View {
 
         //画指针
         canvas.drawLine(getWidth() / 2 , getHeight() / 2 ,
-                (float)(getWidth() / 2 + Math.cos(Math.toRadians(getDegree(5))) * POINTER_LENGTH),
-                (float)(getHeight() / 2 + Math.sin(Math.toRadians(getDegree(5))) * POINTER_LENGTH),
+                (float)(getWidth() / 2 + Math.cos(Math.toRadians(getDegree(pointerIndex))) * POINTER_LENGTH),
+                (float)(getHeight() / 2 + Math.sin(Math.toRadians(getDegree(pointerIndex))) * POINTER_LENGTH),
                 paint);
 
     }
