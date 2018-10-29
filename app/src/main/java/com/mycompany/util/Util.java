@@ -54,4 +54,12 @@ public class Util {
     public static int dp2px(float dp) {
         return  (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, Resources.getSystem().getDisplayMetrics());
     }
+
+    public static int sp2px(float dp) {
+        return  (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, dp, Resources.getSystem().getDisplayMetrics());
+    }
+
+    public static float getZForCamera(int z) {
+        return - z * Resources.getSystem().getDisplayMetrics().density;
+    }
 }

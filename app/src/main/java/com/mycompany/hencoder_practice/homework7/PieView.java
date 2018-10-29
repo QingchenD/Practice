@@ -1,10 +1,9 @@
-package com.mycompany.hencoder_practice.view;
+package com.mycompany.hencoder_practice.homework7;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;

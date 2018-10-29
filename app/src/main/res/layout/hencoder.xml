@@ -4,28 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.mycompany.hencoder_practice.view.PanelView
+    <!--<com.mycompany.hencoder_practice.homework7.PanelView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"/>-->
+
+    <!--<com.mycompany.hencoder_practice.homework7.PieView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"/>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<com.mycompany.hencoder_practice.homework7.PartView-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="160dp"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:layout_gravity="center" />-->
+    <!--</LinearLayout>-->
+
+
+    <!--<com.mycompany.hencoder_practice.homework8.AnnulusView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!--<com.mycompany.hencoder_practice.homework8.MixView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <com.mycompany.hencoder_practice.homework8.AnimatorView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-    <com.mycompany.hencoder_practice.view.PieView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <com.mycompany.hencoder_practice.view.PartView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center" />
-    </LinearLayout>
-
+        android:layout_height="match_parent" />
 
 </LinearLayout>
