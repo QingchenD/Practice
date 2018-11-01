@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -36,8 +37,21 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
 
-    <com.mycompany.hencoder_practice.homework8.AnimatorView
+    <!--<com.mycompany.hencoder_practice.homework8.ClicpView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!--<com.mycompany.hencoder_practice.homework9.AnimatorView-->
+        <!--android:id="@+id/animator_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+
+    <com.mycompany.hencoder_practice.homework10.MyEditTextView
+        android:id="@+id/my_edit_text_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        app:useFloatingLabel="true"
+        android:hint="天霸动霸Tua雨一直下"/>
 
 </LinearLayout>

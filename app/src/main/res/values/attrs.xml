@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyEditTextView">
+        <attr name="useFloatingLabel" format="boolean"/>
+        <attr name="nihao" format="string"/>
+    </declare-styleable>
+</resources>
