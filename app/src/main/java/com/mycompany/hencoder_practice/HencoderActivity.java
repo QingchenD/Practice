@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.LinearInterpolator;
 
 import com.mycompany.hencoder_practice.homework10.MyEditTextView;
+import com.mycompany.hencoder_practice.homework11.CircleView;
+import com.mycompany.hencoder_practice.homework11.SquareImageView;
+import com.mycompany.hencoder_practice.homework11.TagLayout;
 import com.mycompany.hencoder_practice.homework9.AnimatorView;
 import com.mycompany.mymaintestactivity.R;
 
@@ -19,14 +22,14 @@ public class HencoderActivity extends AppCompatActivity {
 
     private Animator animator;
 
-    private MyEditTextView view;
+    private TagLayout view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hencoder);
 
-        view = (MyEditTextView) findViewById(R.id.my_edit_text_view);
+        view = (TagLayout) findViewById(R.id.tag_layout);
 
 //        PropertyValuesHolder bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFlip", 45);
 //        PropertyValuesHolder flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270);

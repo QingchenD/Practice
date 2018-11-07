@@ -47,11 +47,150 @@
         <!--android:layout_height="match_parent" />-->
 
 
-    <com.mycompany.hencoder_practice.homework10.MyEditTextView
-        android:id="@+id/my_edit_text_view"
+    <!--<com.mycompany.hencoder_practice.homework10.MyEditTextView-->
+        <!--android:id="@+id/my_edit_text_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:useFloatingLabel="true"-->
+        <!--android:hint="天霸动霸Tua雨一直下"/>-->
+
+    <!--<com.mycompany.hencoder_practice.homework11.CircleView-->
+        <!--android:id="@+id/circle_view"-->
+        <!--android:background="@android:color/darker_gray"-->
+        <!--android:paddingStart="15dp"-->
+        <!--android:paddingTop="20dp"-->
+        <!--android:paddingEnd="5dp"-->
+        <!--android:paddingBottom="30dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--app:radius="150dp"/>-->
+
+    <!--<com.mycompany.hencoder_practice.homework11.SquareImageView-->
+        <!--android:id="@+id/square_view"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:padding="10dp"-->
+        <!--android:background="@android:color/darker_gray"-->
+        <!--android:src="@drawable/dog"/>-->
+
+    <com.mycompany.hencoder_practice.homework11.TagLayout
+        android:id="@+id/tag_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:useFloatingLabel="true"
-        android:hint="天霸动霸Tua雨一直下"/>
+        android:layout_height="match_parent">
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="湖北省"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="湖南"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="印度利西亚联邦政府府邸"/>
+
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="利比里亚"/>
+
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="澳大利亚"/>
+
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中华人民共和国"/>
+
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="台湾省"/>
+
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新疆维吾尔自治区"/>
+
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="噶拉斯地貌"/>
+
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="阿凡达星哈利路亚"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="沿海各省"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="高冷"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="高富帅"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="白富美"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年轻有为"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="程序猿"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="抢手"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="天才枪手"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="黑龙江"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="九寨沟"/>
+
+        <com.mycompany.hencoder_practice.homework11.ColorTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="玉龙雪山"/>
+
+    </com.mycompany.hencoder_practice.homework11.TagLayout>
 
 </LinearLayout>
