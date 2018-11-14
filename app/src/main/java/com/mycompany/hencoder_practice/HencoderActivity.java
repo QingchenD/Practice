@@ -14,6 +14,7 @@ import com.mycompany.hencoder_practice.homework10.MyEditTextView;
 import com.mycompany.hencoder_practice.homework11.CircleView;
 import com.mycompany.hencoder_practice.homework11.SquareImageView;
 import com.mycompany.hencoder_practice.homework11.TagLayout;
+import com.mycompany.hencoder_practice.homework13.ScalableImageView;
 import com.mycompany.hencoder_practice.homework9.AnimatorView;
 import com.mycompany.mymaintestactivity.R;
 
@@ -22,14 +23,14 @@ public class HencoderActivity extends AppCompatActivity {
 
     private Animator animator;
 
-    private TagLayout view;
+    private ScalableImageView view;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hencoder);
 
-        view = (TagLayout) findViewById(R.id.tag_layout);
+        view = (ScalableImageView) findViewById(R.id.scalable_img);
 
 //        PropertyValuesHolder bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFlip", 45);
 //        PropertyValuesHolder flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270);

@@ -24,38 +24,37 @@ public class TagLayout extends ViewGroup {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        View child;
+        int specMode = MeasureSpec.getMode(widthMeasureSpec);
+        int measureWidth = MeasureSpec.getSize(widthMeasureSpec);
         int widthUsed = 0;
         int heightUsed = 0;
-        int lineWidthUsed = 0;
         int lineMaxHeight = 0;
-        int specMode = MeasureSpec.getMode(widthMeasureSpec);
-        int specWidth = MeasureSpec.getSize(widthMeasureSpec);
-        for (int i = 0; i < getChildCount(); i++) {
-            View child = getChildAt(i);
+        for (int i = 0; i < getChildCount() ; i++) {
+            child = getChildAt(i);
             measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed);
             if (specMode != MeasureSpec.UNSPECIFIED &&
-                    lineWidthUsed + child.getMeasuredWidth() > specWidth) {
-                lineWidthUsed = 0;
+                    widthUsed + child.getMeasuredWidth() > measureWidth ) {
                 heightUsed += lineMaxHeight;
+                widthUsed = 0;
                 lineMaxHeight = 0;
-                measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed);
+               // measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed);
             }
-            Rect childBound;
-            if (childrenBounds.size() <= i) {
-                childBound = new Rect();
-                childrenBounds.add(childBound);
+
+            Rect bound;
+            if (i >= childrenBounds.size()) {
+                bound = new Rect();
+                childrenBounds.add(bound);
             } else {
-                childBound = childrenBounds.get(i);
+                bound = childrenBounds.get(i);
             }
-            childBound.set(lineWidthUsed, heightUsed, lineWidthUsed + child.getMeasuredWidth(), heightUsed + child.getMeasuredHeight());
-            lineWidthUsed += child.getMeasuredWidth();
-            widthUsed = Math.max(widthUsed, lineWidthUsed);
+
+            bound.set(widthUsed, heightUsed, widthUsed + child.getMeasuredWidth(), heightUsed + child.getMeasuredHeight());
+            widthUsed += child.getMeasuredWidth();
             lineMaxHeight = Math.max(lineMaxHeight, child.getMeasuredHeight());
         }
 
-        int width = widthUsed;
-        int height = heightUsed + lineMaxHeight;
-        setMeasuredDimension(width, height);
+        setMeasuredDimension(measureWidth, heightUsed + lineMaxHeight);
     }
 
     @Override
