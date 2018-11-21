@@ -201,6 +201,12 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        Log.i(TAG, "Mydebug" + "onWindowFocusChanged()");
+        super.onWindowFocusChanged(hasFocus);
+    }
+
+    @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Log.d(TAG, " onNewIntent() time=" + intent.getLongExtra("time",0));

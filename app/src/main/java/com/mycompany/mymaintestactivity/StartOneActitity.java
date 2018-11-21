@@ -109,6 +109,8 @@ public class StartOneActitity extends Activity {
         Log.i(TAG, "mydebug onRestoreInstanceState()");
     }
 
+
+
     @Override
     protected void onResume() {
         super.onResume();

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -17,11 +18,13 @@ import android.widget.Button;
 
 public class DialogTestActivity extends Activity implements View.OnClickListener {
 
+    private String TAG = "DialogTestActivity";
     private Button btnShowDialog;
     private Button btnDialogWithLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_tst_layout);
 
@@ -32,7 +35,14 @@ public class DialogTestActivity extends Activity implements View.OnClickListener
     }
 
     @Override
+    protected void onStart() {
+        Log.i(TAG, "onStart()");
+        super.onStart();
+    }
+
+    @Override
     protected void onResume() {
+        Log.i(TAG, "onResume()");
         super.onResume();
     }
 
@@ -75,6 +85,30 @@ public class DialogTestActivity extends Activity implements View.OnClickListener
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(TAG, "onPause()");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(TAG, "onStop()");
+        super.onStop();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        Log.i(TAG, "onWindowFocusChanged() hasFocus:" + hasFocus);
+        super.onWindowFocusChanged(hasFocus);
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.i(TAG, "onDestroy()");
+        super.onDestroy();
     }
 
     public class MyDialog extends Dialog {
