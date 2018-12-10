@@ -331,6 +331,10 @@
         <activity android:name="com.mycompany.hencoder_practice.HencoderActivity"
             android:theme="@style/AppTheme"/>
 
+        <activity android:name="com.mycompany.time.AlarmManagerTestActivity" />
+
+        <activity android:name="com.mycompany.time.ClockActivity"></activity>
+
         <receiver android:name=".BootCompleteReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

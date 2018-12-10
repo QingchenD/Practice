@@ -37,6 +37,7 @@ import com.mycompany.retrofit.RetrofitTestActivity;
 import com.mycompany.rxjava.RxJavaTestActivity;
 import com.mycompany.surface.SurfaceViewTestActivty;
 import com.mycompany.threadLocal.ThreadLocalTestActivity;
+import com.mycompany.time.AlarmManagerTestActivity;
 
 import java.security.Security;
 import java.util.List;
@@ -83,6 +84,11 @@ public class MainActivity extends Activity {
         int maxheapSize = manager.getLargeMemoryClass();
 
         Log.i(TAG, "mydebug  heapsize:" + heapSize + " maxHeapSize:" + maxheapSize);
+
+        Runtime runtime = Runtime.getRuntime();
+        Log.i(TAG, " totalMemory:" + runtime.totalMemory() + " maxMem:" + runtime.maxMemory()
+         + " freeMem:" + runtime.freeMemory());
+
 //        SystemClock.sleep(10*1000);
 //        Scontext = this;
 
@@ -551,6 +557,12 @@ public class MainActivity extends Activity {
     public void onHencoderClick(View v) {
         Intent intent = new Intent();
         intent.setClass(this, HencoderActivity.class);
+        startActivity(intent);
+    }
+
+    public void onAlarmManagerClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, AlarmManagerTestActivity.class);
         startActivity(intent);
     }
 

@@ -12,18 +12,32 @@ import android.widget.ListView;
 
 import com.mycompany.mymaintestactivity.R;
 
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Flowable;
+import io.reactivex.Maybe;
+import io.reactivex.MaybeObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 public class RxJavaTestActivity extends Activity {
@@ -43,8 +57,12 @@ public class RxJavaTestActivity extends Activity {
                 R.drawable.boot,R.drawable.dot_green,R.drawable.cookie,
                 R.drawable.santa};
         //rxJavaBaseUse();
-        rxJavaChainUse();
+        //rxJavaChainUse();
 
+        Log.i(TAG,  " OnCreate()");
+
+        //calculate();
+        backpressureTest();
     }
 
     //RxJava基本使用
@@ -110,10 +128,16 @@ public class RxJavaTestActivity extends Activity {
                 e.onNext(" Five ");
                 //e.onError(new Throwable("This is an other error!!"));
             }}
-            )
-            //.observeOn(AndroidSchedulers.mainThread())//回调在主线程
-            //.subscribeOn(Schedulers.io())//执行在io线程
-            .subscribe(new Observer<String>() {
+            ).map(new Function<String, Integer>() {
+
+                @Override
+                public Integer apply(String s) throws Exception {
+                    return Integer.valueOf(s);
+                }
+            })
+            .observeOn(AndroidSchedulers.mainThread())//回调在主线程
+            .subscribeOn(Schedulers.io())//执行在io线程
+            .subscribe(new Observer<Integer>() {
 
                 @Override
                 public void onSubscribe(Disposable d) {
@@ -122,9 +146,9 @@ public class RxJavaTestActivity extends Activity {
                 }
 
                 @Override
-                public void onNext(String value) {
+                public void onNext(Integer value) {
                     Log.i(TAG,  "onNext() " + value);
-                    if (value.equalsIgnoreCase("Dispose")) {
+                    if (value.toString().equalsIgnoreCase("Dispose")) {
                         mDisposable.dispose();
                     }
                 }
@@ -232,5 +256,245 @@ public class RxJavaTestActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void calculate() {
+
+        Log.i(TAG,  " calculate()");
+
+        Observable.just(1, 2, 3, 4, 5)
+                .scan(new BiFunction<Integer, Integer, Integer>() {
+                    @Override
+                    public Integer apply(Integer integer, Integer integer2) {
+
+                        Log.i(TAG, "scan() integer + integer2 = " + (integer + integer2));
+                        Log.i(TAG, "scan() Obsevable thread on:" + Thread.currentThread().getName());
+                        return integer + integer2;
+                    }
+                })
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer integer) throws Exception {
+                        Log.i(TAG, "filter() integer = " + integer);
+                        Log.i(TAG, "filter() Obsevable thread on:" + Thread.currentThread().getName());
+                        return integer > 3;
+                    }
+                })
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())
+                .doOnNext(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        Log.i(TAG, "doOnNext() integer = " + integer);
+                        Log.i(TAG, "doOnNext() observer(newThread) thread on:" + Thread.currentThread().getName());
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onError(Throwable e) {
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+                        Log.i(TAG, "subscribe() integer = " + integer);
+                        Log.i(TAG, "subscribe() observer(mainThread) thread on:" + Thread.currentThread().getName());
+                        Log.i(TAG, "onNext=" + integer);
+                    }
+                });
+    }
+
+    private void fromTest() {
+        Observable.fromArray(1,2,3)
+                .flatMap(new Function<Integer, ObservableSource<String>>() {
+                    @Override
+                    public ObservableSource<String> apply(Integer integer) throws Exception {
+                        return Observable.just(integer.toString());
+                    }
+                })
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        d.dispose();
+                    }
+
+                    @Override
+                    public void onNext(String value) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    private void flowableTest() {
+        Flowable.just(1,2,3)
+                .subscribe(new Subscriber<Integer>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer value) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    private void test() {
+        Observable.just("a", "b", "c", "d")
+                .observeOn(Schedulers.computation())
+                .map(new Function<String, String>() {
+                    @Override
+                    public String apply(String s) throws Exception {
+                        System.out.print(Thread.currentThread().getName() + ":first--" + s);
+                        return s + s;
+                    }
+                })
+                .observeOn(Schedulers.io())
+                .map(new Function<String, String>() {
+                    @Override
+                    public String apply(String s) throws Exception {
+                        System.out.print(Thread.currentThread().getName() + ":second--" + s);
+                        return s + s;
+                    }
+                })
+                .observeOn(Schedulers.newThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onError(Throwable e) {
+                        System.out.print("error");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        System.out.print(Thread.currentThread().getName());
+                        System.out.print("completed");
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        System.out.println(s);
+                        System.out.print("s");
+                    }
+                });
+    }
+
+
+    private void maybeTest() {
+        //判断是否登陆
+        Maybe.just(true)
+                //可能涉及到IO操作，放在子线程
+                .subscribeOn(Schedulers.newThread())
+                //取回结果传到主线程
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new MaybeObserver<Boolean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Boolean value) {
+                        if(value){
+
+                        }else{
+
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
+
+    private void singleTest() {
+        Single.just(true)
+                .subscribe(new SingleObserver<Boolean>() {
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Boolean value) {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
+    }
+
+    private void backpressureTest() {
+        //被观察者在主线程中，每1ms发送一个事件
+        Observable.interval(1, TimeUnit.MILLISECONDS)
+                //.subscribeOn(Schedulers.newThread())
+                //将观察者的工作放在新线程环境中
+                .observeOn(Schedulers.newThread())
+                //观察者处理每1000ms才处理一个事件
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        Log.i(TAG,"---->"+aLong);
+                    }
+                });
+
+    }
+
+    private void requestTest() {
+
     }
 }

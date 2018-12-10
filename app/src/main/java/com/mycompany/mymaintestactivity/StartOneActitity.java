@@ -23,6 +23,8 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Qingweid on 2015/12/10.
@@ -278,5 +280,25 @@ public class StartOneActitity extends Activity {
 
     public void OnFinish(View view) {
         finish();
+    }
+
+
+    private void myTest() {
+        ArrayList<String> arrayList=new ArrayList<>();
+        arrayList.add("hello");
+        arrayList.add("how are you");
+        arrayList.add("I'm ok");
+
+        Iterator<String> iterator = arrayList.iterator();
+        boolean shouldDelete=true;
+        while (iterator.hasNext()){
+            String string=iterator.next();
+            if(shouldDelete){
+                shouldDelete=!shouldDelete;
+                arrayList.remove(2);
+                iterator.remove();
+            }
+
+        }
     }
 }
