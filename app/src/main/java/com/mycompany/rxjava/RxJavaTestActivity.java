@@ -12,9 +12,6 @@ import android.widget.ListView;
 
 import com.mycompany.mymaintestactivity.R;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -346,30 +343,30 @@ public class RxJavaTestActivity extends Activity {
                 });
     }
 
-    private void flowableTest() {
-        Flowable.just(1,2,3)
-                .subscribe(new Subscriber<Integer>() {
-                    @Override
-                    public void onSubscribe(Subscription s) {
-
-                    }
-
-                    @Override
-                    public void onNext(Integer value) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
+//    private void flowableTest() {
+//        Flowable.just(1,2,3)
+//                .subscribe(new Subscriber<Integer>() {
+//                    @Override
+//                    public void onSubscribe(Subscription s) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(Integer value) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//
+//                    }
+//                });
+//    }
 
     private void test() {
         Observable.just("a", "b", "c", "d")

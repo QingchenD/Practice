@@ -16,6 +16,7 @@ import java.lang.reflect.Type;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
 
 
 import io.reactivex.Observer;
@@ -76,6 +77,7 @@ public class RetrofitTestActivity extends Activity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.100.101:6789/get_data.json/")
+                .callbackExecutor(Executors.newSingleThreadExecutor())
                 //.addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

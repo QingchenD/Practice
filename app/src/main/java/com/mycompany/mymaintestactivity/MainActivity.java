@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Looper;
+import android.os.MessageQueue;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
@@ -38,6 +41,7 @@ import com.mycompany.rxjava.RxJavaTestActivity;
 import com.mycompany.surface.SurfaceViewTestActivty;
 import com.mycompany.threadLocal.ThreadLocalTestActivity;
 import com.mycompany.time.AlarmManagerTestActivity;
+import com.mycompany.view.SurfaceViewDemoActivity;
 
 import java.security.Security;
 import java.util.List;
@@ -102,14 +106,55 @@ public class MainActivity extends Activity {
 //        SystemClock.sleep(10);
 //        initView();
 
-        final String hello = "hello";
-        //InnerStaticClass inner = new InnerStaticClass();
+        // 拿到主线程的MessageQueue
+        Looper.myQueue().addIdleHandler(new MessageQueue.IdleHandler() {
 
-        new Thread(new Runnable() {
-            public void run() {
-                System.out.println("Hi " + hello);
+            @Override
+            public boolean queueIdle() {
+                //  在这里去处理你想延时加载的东西
+                //delayLoad();
+
+                // 最后返回false，后续不用再监听了。
+                return false;
             }
-        }).start();
+        });
+
+        getMaxMemoryInfo();
+        getMemoryInfo();
+        getPath();
+    }
+
+    private void getMaxMemoryInfo(){
+        Runtime rt = Runtime.getRuntime();
+        long maxMemory = rt.maxMemory();
+        Log.d("MaxMemory:", Long.toString(maxMemory/(1024*1024)));
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        Log.d("MemoryClass:", Long.toString(activityManager.getMemoryClass()));
+        Log.d("LargeMemoryClass:", Long.toString(activityManager.getLargeMemoryClass()));
+    }
+
+    private void getMemoryInfo() {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo info = new ActivityManager.MemoryInfo();
+        manager.getMemoryInfo(info);
+        Log.e("Memory","系统总内存:"+(info.totalMem / (1024*1024))+"M");
+        Log.e("Memory","系统剩余内存:"+(info.availMem / (1024*1024))+"M");
+        Log.e("Memory","系统是否处于低内存运行："+info.lowMemory );
+        Log.e("Memory","系统剩余内存低于"+( info.threshold  / (1024*1024))+"M时为低内存运行");
+    }
+
+    private void getPath() {
+        //内部存储
+        System.out.println("Environment.getDataDirector: " + Environment.getDataDirectory());
+        System.out.println("getFilesDir().getAbsolutePath():" + getFilesDir().getAbsolutePath());
+        System.out.println("getCacheDir().getAbsolutePath():" + getCacheDir().getAbsolutePath());
+        System.out.println("getDir():" + getDir("", MODE_PRIVATE));
+
+        //external   storage
+        System.out.println("Environment.getExternalStorageDirectory():" + Environment.getExternalStorageDirectory().getAbsolutePath());
+        System.out.println("Environment.getExternalStoragePublicDirectory():" + Environment.getExternalStoragePublicDirectory("").getAbsolutePath());
+        System.out.println("getExternalFilesDir():" + getExternalFilesDir("").getAbsolutePath());
+        System.out.println("getExternalCacheDir():" + getExternalCacheDir().getAbsolutePath());
     }
 
     private synchronized void testANR() {
@@ -560,11 +605,20 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    //78
     public void onAlarmManagerClick(View v) {
         Intent intent = new Intent();
         intent.setClass(this, AlarmManagerTestActivity.class);
         startActivity(intent);
     }
+
+    //79
+    public void onSurfaceViewDemoClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, SurfaceViewDemoActivity.class);
+        startActivity(intent);
+    }
+
 
 
     //launch function

@@ -80,9 +80,9 @@ class F {
     }
 }
 
-fun F.foo() {
-    Log.i("Class F", ("extension"))
-}
+//fun F.foo() {
+//    Log.i("Class F", ("extension"))
+//}
 
 
 class MyClass {

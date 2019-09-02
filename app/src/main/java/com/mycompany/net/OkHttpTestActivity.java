@@ -12,6 +12,7 @@ import com.mycompany.mymaintestactivity.R;
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.HostnameVerifier;
@@ -23,6 +24,7 @@ import javax.net.ssl.X509TrustManager;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Dispatcher;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -110,8 +112,11 @@ public class OkHttpTestActivity extends Activity {
             public void run() {
                 try {
 
+                    Dispatcher dispatcher = new Dispatcher(Executors.newSingleThreadExecutor());
+
                     OkHttpClient.Builder builder = new OkHttpClient.Builder();
                     builder.connectTimeout(5, TimeUnit.SECONDS);
+                    builder.dispatcher(dispatcher);
                     builder.sslSocketFactory(createSSLSocketFactory(), new TrustAllCerts());
                     builder.hostnameVerifier(new HostnameVerifier() {
                         @Override

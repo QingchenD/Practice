@@ -11,12 +11,16 @@ import android.util.Log;
 import com.mycompany.mymaintestactivity.R;
 
 import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class AlarmManagerTestActivity extends Activity {
 
     private String TAG = "AlarmManagerTestActivity";
     private AlarmManager alarmManager ;
     private PendingIntent pi;
+
+    private Timer timer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +48,14 @@ public class AlarmManagerTestActivity extends Activity {
         Log.e(TAG, " currentTime" + currentMillisSeconds + " timer:" + time);   //这里的时间是一个unix时间戳
         // 提示闹钟设置完毕:
 
+
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+            }
+        }, 0);
     }
 
     @Override

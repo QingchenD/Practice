@@ -613,6 +613,13 @@
                 android:layout_height="wrap_content"
                 android:onClick="onAlarmManagerClick"
                 android:text="78 Alarm Manager"/>
+
+            <Button
+                android:id="@+id/btn_surface_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onSurfaceViewDemoClick"
+                android:text="79 Surface view Demo"/>
         </LinearLayout>
 
     </ScrollView>

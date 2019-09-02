@@ -63,7 +63,7 @@ public class AidlTestActivity extends Activity {
         });
 
         btn = (Button) findViewById(R.id.btn_start_second_activity);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -74,7 +74,7 @@ public class AidlTestActivity extends Activity {
         });
 
         btn = (Button) findViewById(R.id.btn_start_service);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -85,7 +85,7 @@ public class AidlTestActivity extends Activity {
         });
 
         btn = (Button) findViewById(R.id.btn_stop_service);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -96,7 +96,7 @@ public class AidlTestActivity extends Activity {
         });
 
         btn = (Button) findViewById(R.id.btn_bind_service);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -107,7 +107,7 @@ public class AidlTestActivity extends Activity {
         });
 
         btn = (Button) findViewById(R.id.btn_unbind_service);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -119,7 +119,7 @@ public class AidlTestActivity extends Activity {
         });
 
         btn = (Button) findViewById(R.id.btn_stop_service_immediately);
-        btn.setOnClickListener(new View.OnClickListener(){
+        btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

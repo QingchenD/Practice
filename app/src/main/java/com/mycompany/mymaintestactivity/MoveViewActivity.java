@@ -50,6 +50,7 @@ public class MoveViewActivity extends Activity implements View.OnTouchListener{
         super.onDestroy();
     }
 
+
     private void smoothScrollTo(int destX , int destY) {
         int scrollX = btnMove1.getScrollX();
         int deltaX = destX - scrollX;

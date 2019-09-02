@@ -28,25 +28,7 @@ public class MessengerTestActivity extends Activity {
 
     private static TextView mTvResponse;
 
-    private static Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case MESSENGER_TEST_RECEIVE:
-                    Log.i(TAG, " Get Response from server");
-                    Bundle bundle = msg.getData();
-                    String response = bundle.getString("Response");
-                    if (msg.obj instanceof  String) {
-                        response += "\n" + msg.obj;
-                    }
-                    mTvResponse.setText(response);
-                    break;
-
-                default:
-                    break;
-            }
-        }
-    } ;
+    private Handler mHandler = new MyHandler() ;
 
     private Messenger mLocalMessenger = new Messenger(mHandler) ;
 
@@ -97,5 +79,26 @@ public class MessengerTestActivity extends Activity {
         unbindService(mConn);
 
         super.onDestroy();
+    }
+
+    static class MyHandler extends Handler {
+
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case MESSENGER_TEST_RECEIVE:
+                    Log.i(TAG, " Get Response from server");
+                    Bundle bundle = msg.getData();
+                    String response = bundle.getString("Response");
+                    if (msg.obj instanceof  String) {
+                        response += "\n" + msg.obj;
+                    }
+                    mTvResponse.setText(response);
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }

@@ -22,6 +22,37 @@
         />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:background="@android:color/holo_blue_light"
+        android:text="Padding 10 dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="10dp"
+        android:textSize="18sp"
+        android:background="@android:color/holo_blue_light"
+        android:text="Margin 10 dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="10dp"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="Margin 10 dp + padding 10dp"
+        />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
