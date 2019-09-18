@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
 import android.os.MessageQueue;
+import android.os.StrictMode;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
@@ -60,6 +61,20 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
+        if (true) {
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                    .detectDiskReads()
+                    .detectDiskWrites()
+                    .detectNetwork()   // or .detectAll() for all detectable problems
+                    .penaltyLog()
+                    .build());
+            StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                    .detectLeakedSqlLiteObjects()
+                    .detectLeakedClosableObjects()
+                    .penaltyLog()
+                    .penaltyDeath()
+                    .build());
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -122,6 +137,18 @@ public class MainActivity extends Activity {
         getMaxMemoryInfo();
         getMemoryInfo();
         getPath();
+
+        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                Toast.makeText(MainActivity.this, "In Thread", Toast.LENGTH_LONG).show();
+                Looper.loop();
+            }
+        });
+        t.start();
+
     }
 
     private void getMaxMemoryInfo(){

@@ -71,6 +71,11 @@ public class PlayVideoListAdapter extends BaseAdapter {
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
 
