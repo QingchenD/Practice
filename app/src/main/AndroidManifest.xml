@@ -336,7 +336,9 @@
 
         <activity android:name="com.mycompany.view.SurfaceViewDemoActivity" />
 
-        <activity android:name="com.mycompany.time.ClockActivity"></activity>
+        <activity android:name="com.mycompany.time.ClockActivity"/>
+
+        <activity android:name="com.mycompany.view.AnimationDemoActivity"/>
 
         <receiver android:name=".BootCompleteReceiver" >
             <intent-filter>

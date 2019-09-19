@@ -42,6 +42,7 @@ import com.mycompany.rxjava.RxJavaTestActivity;
 import com.mycompany.surface.SurfaceViewTestActivty;
 import com.mycompany.threadLocal.ThreadLocalTestActivity;
 import com.mycompany.time.AlarmManagerTestActivity;
+import com.mycompany.view.AnimationDemoActivity;
 import com.mycompany.view.SurfaceViewDemoActivity;
 
 import java.security.Security;
@@ -643,6 +644,13 @@ public class MainActivity extends Activity {
     public void onSurfaceViewDemoClick(View v) {
         Intent intent = new Intent();
         intent.setClass(this, SurfaceViewDemoActivity.class);
+        startActivity(intent);
+    }
+
+    //80
+    public void onAnimationDemoBtn(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, AnimationDemoActivity.class);
         startActivity(intent);
     }
 
