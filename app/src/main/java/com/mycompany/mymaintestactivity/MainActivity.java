@@ -654,6 +654,12 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    //81
+    public void onConstranitDemoClick(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this, ConstraintLayoutTestActivity.class);
+        startActivity(intent);
+    }
 
 
     //launch function

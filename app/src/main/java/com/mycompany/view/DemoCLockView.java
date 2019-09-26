@@ -3,6 +3,7 @@ package com.mycompany.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -48,11 +49,21 @@ public class DemoCLockView extends View {
         canvas.save();
         for (int i = 0; i < 12; i++) {
             canvas.drawLine(x, y - radius, x, y - radius + 100, paint);
+            drawRotateText(canvas,i, x, y, radius);
             canvas.rotate(rotateAngle, x, y);
         }
         canvas.restore();
 
-        drawText(canvas, radius, x, y);
+        //drawText(canvas, radius, x, y);
+    }
+
+    private void drawRotateText(Canvas canvas, int index, int x, int y, int radius) {
+        String str = String.valueOf(index);
+        Rect rect = new Rect();
+        textPaint.getTextBounds(str, 0, str.length(), rect);
+        int w = rect.width();
+        int h = rect.height();
+        canvas.drawText(str, x - w / 2, y - radius + 100 + h, textPaint);
     }
 
 

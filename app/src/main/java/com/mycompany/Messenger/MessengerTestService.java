@@ -7,14 +7,23 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import org.jetbrains.annotations.Nullable;
 
 public class MessengerTestService extends Service {
 
     private static final String TAG = "MessengerTestService";
+    private Handler mHandler =  new MessengerHandler();
+    private Messenger mMessenger = new Messenger(mHandler);
 
-    private static Handler mHandler = new Handler() {
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return mMessenger.getBinder();
+    }
+
+    private static class MessengerHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -40,13 +49,5 @@ public class MessengerTestService extends Service {
                     break;
             }
         }
-    } ;
-
-    private Messenger mMessenger = new Messenger(mHandler);
-
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        return mMessenger.getBinder();
     }
 }

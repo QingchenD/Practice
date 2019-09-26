@@ -20,6 +20,7 @@ public class MyServiceActivity extends Activity  implements View.OnClickListener
     private Button bindService;
     private Button unbindService;
     private Button startIntentService;
+    private Button useServieFunction;
 
     private MyService.DownloadBinder downloadBinder;
 
@@ -29,6 +30,7 @@ public class MyServiceActivity extends Activity  implements View.OnClickListener
             downloadBinder = (MyService.DownloadBinder) service;
             downloadBinder.startDownload();
             downloadBinder.getProgress();
+            Log.i("MyService","Activity Bind Service Success");
         }
 
         @Override
@@ -45,12 +47,14 @@ public class MyServiceActivity extends Activity  implements View.OnClickListener
         bindService = (Button) findViewById(R.id.btn_bind_service);
         unbindService = (Button) findViewById(R.id.btn_unbind_service);
         startIntentService = (Button) findViewById(R.id.btn_start_intent_service);
+        useServieFunction = (Button) findViewById(R.id.btn_call_service);
 
         startService.setOnClickListener(this);
         stopService.setOnClickListener(this);
         bindService.setOnClickListener(this);
         unbindService.setOnClickListener(this);
         startIntentService.setOnClickListener(this);
+        useServieFunction.setOnClickListener(this);
 
     }
 
@@ -79,9 +83,14 @@ public class MyServiceActivity extends Activity  implements View.OnClickListener
 
             case R.id.btn_start_intent_service:
                 //打印主线程的id
-                Log.d("MainActivity", "Thread id is " + Thread.currentThread().getId());
+                Log.d("MyService", "Activity:Thread id is " + Thread.currentThread().getId());
                 Intent intentService = new Intent(this,MyIntentService.class);
                 startService(intentService);
+                break;
+
+            case R.id.btn_call_service:
+                downloadBinder.startDownload();
+                downloadBinder.getProgress();
                 break;
 
             default:

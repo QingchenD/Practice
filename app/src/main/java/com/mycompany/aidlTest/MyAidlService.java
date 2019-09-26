@@ -34,8 +34,7 @@ public class MyAidlService extends Service {
         @Override
         public void stopServiceImmediately() throws RemoteException {
             Log.d(TAG, "MyAidlService stopServiceImmediately " + mStartID);
-
-
+            MyAidlService.this.stopSelf();
         }
     };
 
@@ -57,11 +56,11 @@ public class MyAidlService extends Service {
         }).start();
     }
 
-    @Override
-    public void onStart(Intent intent, int startId) {
-        Log.d(TAG, "MyAidlService onStart() startId:" + startId);
-        super.onStart(intent, startId);
-    }
+//    @Override
+//    public void onStart(Intent intent, int startId) {
+//        Log.d(TAG, "MyAidlService onStart() startId:" + startId);
+//        super.onStart(intent, startId);
+//    }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
