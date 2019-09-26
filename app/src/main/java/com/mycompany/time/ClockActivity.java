@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 
 
@@ -28,5 +29,6 @@ public class ClockActivity extends Activity {
                         ClockActivity.this.finish();
                     }
                 }).show();
+
     }
 }

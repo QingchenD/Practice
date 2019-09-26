@@ -1,15 +1,24 @@
 package com.mycompany.view;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.animation.ValueAnimator;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
@@ -33,6 +42,7 @@ public class AnimationDemoActivity extends Activity {
         textWidget = findViewById(R.id.text_widget);
         textWidget.setText("画面旋转动画效果");
         textWidget.startAnimation(anim);
+        //textWidget.clearAnimation();
         AnimationDrawable animationDrawable = (AnimationDrawable) getDrawable(R.drawable.frame_anim);
         textWidget.setBackground(animationDrawable);
         animationDrawable.start();
@@ -42,19 +52,43 @@ public class AnimationDemoActivity extends Activity {
         //Animation a = AnimationUtils.loadAnimation(getBaseContext(), R.anim.anim_alpha);
         //imageView.startAnimation(a);
         //animationSet(imageView);
-        imageView.setOnClickListener(new View.OnClickListener(){
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getBaseContext(),"Click Image", Toast.LENGTH_SHORT).show();
-                animator();
+                //animator();
+                //reverseAnimator();
+                //loadAnimator();
+                startValueAnimator();
             }
         });
 
     }
 
+    private void reverseAnimator() {
+        ImageHolder imageHolder = new ImageHolder(imageView);
+        PropertyValuesHolder holder = PropertyValuesHolder.ofInt("width", 400, 700);
+        ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(imageHolder, holder);
+        animator.setDuration(2000);
+        if (imageView.getWidth() >= 700) {
+            animator.reverse();
+        } else {
+            animator.start();
+        }
+        //animator.cancel();
+        //animator.addListener(new MyAnimatorListener(animator));
+
+    }
+
     private void animator() {
         ImageHolder imageHolder = new ImageHolder(imageView);
-        ObjectAnimator animator = ObjectAnimator.ofInt(imageHolder, "width",700);
+        PropertyValuesHolder holder;
+        if (imageView.getWidth() >= 700) {
+            holder = PropertyValuesHolder.ofInt("width", 400);
+        } else {
+            holder = PropertyValuesHolder.ofInt("width", 700);
+        }
+        ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(imageHolder, holder);
         animator.setDuration(2000);
         animator.start();
     }
@@ -79,6 +113,32 @@ public class AnimationDemoActivity extends Activity {
 
 
         v.startAnimation(animationSet);
+    }
+
+    private void loadAnimator() {
+        //ImageHolder imageHolder = new ImageHolder(imageView);
+        Animator animator = AnimatorInflater.loadAnimator(getApplicationContext(), R.animator.property_animator_set);
+        animator.setTarget(imageView);
+        animator.start();
+    }
+
+    private void startValueAnimator() {
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(400, 700, 500, 800);
+        valueAnimator.setInterpolator(new LinearInterpolator());
+        valueAnimator.setDuration(3000);
+
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                // 动画更新过程中的动画值，可以根据动画值的变化来关联对象的属性，实现属性动画
+                int value = (int)animation.getAnimatedValue();
+                Log.d("ValueAnimator", "动画值：" + value );
+                //imageView.getLayoutParams().width = value;
+                imageView.layout(imageView.getLeft(), imageView.getTop(), imageView.getLeft() + value, imageView.getBottom() );
+                //imageView.requestLayout();
+            }
+        });
+        valueAnimator.start();
     }
 
 
@@ -121,6 +181,32 @@ public class AnimationDemoActivity extends Activity {
         public int getWidth() {
             return imageView.getLayoutParams().width;
         }
+    }
 
+    class MyAnimatorListener implements Animator.AnimatorListener {
+        ObjectAnimator animator;
+        MyAnimatorListener(ObjectAnimator animator) {
+            this.animator = animator;
+        }
+
+        @Override
+        public void onAnimationStart(Animator animation) {
+
+        }
+
+        @Override
+        public void onAnimationEnd(Animator animation) {
+            animator.reverse();
+        }
+
+        @Override
+        public void onAnimationCancel(Animator animation) {
+
+        }
+
+        @Override
+        public void onAnimationRepeat(Animator animation) {
+
+        }
     }
 }
