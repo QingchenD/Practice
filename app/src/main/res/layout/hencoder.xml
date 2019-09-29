@@ -33,9 +33,9 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
 
-    <!--<com.mycompany.hencoder_practice.homework8.MixView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
+    <com.mycompany.hencoder_practice.homework8.MixView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <!--<com.mycompany.hencoder_practice.homework8.ClicpView-->
         <!--android:layout_width="match_parent"-->
@@ -193,9 +193,9 @@
 
     <!--</com.mycompany.hencoder_practice.homework11.TagLayout>-->
 
-    <com.mycompany.hencoder_practice.homework13.ScalableImageView
-        android:id="@+id/scalable_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+<!--    <com.mycompany.hencoder_practice.homework13.ScalableImageView-->
+<!--        android:id="@+id/scalable_img"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content" />-->
 
 </LinearLayout>

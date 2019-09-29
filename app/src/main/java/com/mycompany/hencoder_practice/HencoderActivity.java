@@ -30,7 +30,7 @@ public class HencoderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hencoder);
 
-        view = (ScalableImageView) findViewById(R.id.scalable_img);
+        //view = (ScalableImageView) findViewById(R.id.scalable_img);
 
 //        PropertyValuesHolder bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFlip", 45);
 //        PropertyValuesHolder flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270);

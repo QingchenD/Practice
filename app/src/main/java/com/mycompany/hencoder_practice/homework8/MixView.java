@@ -28,6 +28,8 @@ public class MixView extends View {
 
     String str = "Note the \"Killable\" column in the above table -- for those methods that are marked as being killable, after that method returns the process hosting the activity may killed by the system at any time without another line of its code being executed. Because of this, you should use the onPause() method to write any persistent data (such as user edits) to storage. In addition, the method onSaveInstanceState(Bundle) is called before placing the activity in such a background state, allowing you to save away any dynamic instance state in your activity into the given Bundle, to be later received in onCreate(android.os.Bundle) if the activity needs to be re-created. See the Process Lifecycle section for more information on how the lifecycle of a process is tied to the activities it is hosting. Note that it is important to save persistent data in onPause() instead of onSaveInstanceState(android.os.Bundle) because the latter is not part of the lifecycle callbacks, so will not be called in every situation as described in its documentation.";
 
+    String strCN = "“国庆”一词，本指国家喜庆之事，最早见于西晋。西晋的文学家陆机在《五等诸侯论》一文中就曾有“国庆独飨其利，主忧莫与其害”的记载、我国封建时代、国家喜庆的大事，莫大过于帝王的登基、诞辰（清朝称皇帝的生日为万岁节）等。因而我国古代把皇帝即位、诞辰称为“国庆”。今天称国家建立的纪念日为国庆节。\n" +
+            "1949年12月3日，中央人民政府委员会第四次会议接受全国政协的建议，通过了《关于中华人民共和国国庆日的决议》，决定每年10月1日为中华人民共和国宣告成立的伟大日子，为中华人民共和国国庆日。";
     public MixView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
@@ -55,7 +57,8 @@ public class MixView extends View {
         canvas.drawBitmap(bitmap, getWidth() - BITMAP_WIDTH, BITMAP_STARTY, paint );
 
         //draw text
-        drawText(str, canvas);
+        //drawText(str, canvas);
+        drawText(strCN, canvas);
     }
 
     private void drawText(String text, Canvas canvas) {

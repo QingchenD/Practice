@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.View;
 import com.mycompany.util.Util;
 
 public class DemoCLockView extends View {
+    private final String TAG = getClass().getSimpleName();
     private Paint paint;
     private Paint textPaint;
 
@@ -33,6 +35,7 @@ public class DemoCLockView extends View {
         paint.setStrokeWidth(3);
 
         textPaint = new Paint();
+        textPaint.setTypeface(Typeface.SERIF);
         textPaint.setTextSize(Util.sp2px(14));
     }
 
@@ -55,6 +58,13 @@ public class DemoCLockView extends View {
         canvas.restore();
 
         //drawText(canvas, radius, x, y);
+
+        System.out.println(TAG + " fontSpace:" + textPaint.getFontSpacing());
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        System.out.println(TAG + " one line text height:" + (fontMetrics.bottom - fontMetrics.top + fontMetrics.leading) );
+        System.out.println(TAG + " descent - ascent:" + (fontMetrics.descent - fontMetrics.ascent ) );
+        System.out.println(TAG + " descent:" + fontMetrics.descent + " ascent:" + fontMetrics.ascent + " top:" + fontMetrics.top +
+                 " bottom:" + fontMetrics.bottom + " leading:" + fontMetrics.leading);
     }
 
     private void drawRotateText(Canvas canvas, int index, int x, int y, int radius) {
