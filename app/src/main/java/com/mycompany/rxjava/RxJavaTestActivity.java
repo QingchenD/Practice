@@ -85,7 +85,7 @@ public class RxJavaTestActivity extends Activity {
 
             @Override
             public void onNext(String value) {
-                if ("2".equals(value)){
+                if ("2".equals(value)) {
                     mDisposable.dispose();
                     return;
                 }
@@ -167,7 +167,7 @@ public class RxJavaTestActivity extends Activity {
 
 
     //定时操作
-    private void timeDoSomething(){
+    private void timeDoSomething() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {

@@ -152,7 +152,7 @@ public class MainActivity extends Activity {
 
     }
 
-    private void getMaxMemoryInfo(){
+    private void getMaxMemoryInfo() {
         Runtime rt = Runtime.getRuntime();
         long maxMemory = rt.maxMemory();
         Log.d("MaxMemory:", Long.toString(maxMemory/(1024*1024)));
