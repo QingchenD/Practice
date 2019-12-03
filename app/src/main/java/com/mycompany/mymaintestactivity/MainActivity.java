@@ -149,7 +149,6 @@ public class MainActivity extends Activity {
             }
         });
         t.start();
-
     }
 
     private void getMaxMemoryInfo() {
