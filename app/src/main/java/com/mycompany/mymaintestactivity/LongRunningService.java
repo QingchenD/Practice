@@ -32,6 +32,7 @@ public class LongRunningService extends Service {
                 Log.d(TAG, "executed at " + new Date().toString());
             }
         }).start();
+
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         int anHour =  60*1000; //60 * 60 * 1000; //一个小时的毫秒
         long triggerAtTime = SystemClock.elapsedRealtime() + anHour;

@@ -55,7 +55,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends Activity {
     private final String TAG = "MainActivity";
-
     public final int ACTIVITY_REQESET_CODE = 2;
 
     TextView btn2BackText;
